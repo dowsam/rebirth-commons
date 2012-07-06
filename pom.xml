@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>cn.com.restart</groupId>
-		<artifactId>restart-parent</artifactId>
+		<groupId>cn.com.rebirth</groupId>
+		<artifactId>rebirth-parent</artifactId>
 		<version>0.0.1.RC1-SNAPSHOT</version>
 	</parent>
-	<artifactId>restart-commons</artifactId>
+	<artifactId>rebirth-commons</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1.RC1-SNAPSHOT</version>
-	<name>Restart :: Module :: Commons</name>
+	<name>Rebirth :: Module :: Commons</name>
 
 	<dependencies>
 		<!-- spring begin -->
