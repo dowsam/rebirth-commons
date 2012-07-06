@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons CglibProxyUtils.java 2012-2-2 10:11:22 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons CglibProxyUtils.java 2012-7-6 10:22:16 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 import java.lang.reflect.Method;
@@ -10,14 +10,16 @@ import net.sf.cglib.proxy.Callback;
 import net.sf.cglib.proxy.CallbackFilter;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.NoOp;
+
 /**
  * The Class CglibProxyUtils.
  *
  * @author l.xue.nong
  */
 public abstract class CglibProxyUtils {
+	
 	/**
-	 * 产生代理对象，需要原先类的class，以及一个callback函数。.
+	 * Gets the proxy instance.
 	 *
 	 * @param <T> the generic type
 	 * @param objectClass the object class
@@ -33,7 +35,7 @@ public abstract class CglibProxyUtils {
 	}
 
 	/**
-	 * 产生代理对象继承并实现了接口，需要原先类的class，代理对象接口类别列表，以及一个callback函数。.
+	 * Gets the proxy instance.
 	 *
 	 * @param <T> the generic type
 	 * @param objectClass the object class
@@ -51,7 +53,7 @@ public abstract class CglibProxyUtils {
 	}
 
 	/**
-	 * 产生代理对象继承并实现了接口，需要原先类的class，代理对象接口类别列表，以及一个callback函数。.
+	 * Gets the proxy instance.
 	 *
 	 * @param <T> the generic type
 	 * @param objectClass the object class
@@ -69,7 +71,7 @@ public abstract class CglibProxyUtils {
 	}
 
 	/**
-	 * 带方法过滤得对象产生器，需要一个map作为过滤器列表，参数为<方法名,第几个拦截器>，作为指定执行相应的callback函数。.
+	 * Gets the proxy instance.
 	 *
 	 * @param <T> the generic type
 	 * @param objectClass the object class

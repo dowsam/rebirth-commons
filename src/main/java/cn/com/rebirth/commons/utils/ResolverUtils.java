@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ResolverUtils.java 2012-2-18 10:08:07 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ResolverUtils.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -32,6 +32,7 @@ public class ResolverUtils<T> {
 	
 	/** The matches. */
 	private Set<Class<? extends T>> matches = new HashSet<Class<? extends T>>();
+	
 	/** The classloader. */
 	private ClassLoader classloader;
 
@@ -280,17 +281,11 @@ public class ResolverUtils<T> {
 			this.parent = parent;
 		}
 
-		/* (non-Javadoc)
-		 * @see cn.com.summall.commons.utils.ResolverUtils.Matche#matches(java.lang.Class)
-		 */
 		@Override
 		public boolean matches(Class<?> type) {
 			return type != null && parent.isAssignableFrom(type);
 		}
 
-		/* (non-Javadoc)
-		 * @see java.lang.Object#toString()
-		 */
 		@Override
 		public String toString() {
 			return "is assignable to " + parent.getSimpleName();
@@ -317,9 +312,6 @@ public class ResolverUtils<T> {
 			this.suffix = suffix;
 		}
 
-		/* (non-Javadoc)
-		 * @see cn.com.summall.commons.utils.ResolverUtils.Matche#matches(java.lang.Class)
-		 */
 		@Override
 		public boolean matches(Class<?> type) {
 			return type != null && type.getName().endsWith(suffix);
@@ -353,9 +345,6 @@ public class ResolverUtils<T> {
 			this.annotation = annotation;
 		}
 
-		/* (non-Javadoc)
-		 * @see cn.com.summall.commons.utils.ResolverUtils.Matche#matches(java.lang.Class)
-		 */
 		@Override
 		public boolean matches(Class<?> type) {
 			return type != null && type.isAnnotationPresent(annotation);

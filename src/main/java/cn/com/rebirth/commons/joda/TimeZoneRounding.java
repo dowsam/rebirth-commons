@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons TimeZoneRounding.java 2012-3-29 15:15:07 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons TimeZoneRounding.java 2012-7-6 10:38:12 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.joda;
@@ -228,7 +228,7 @@ public abstract class TimeZoneRounding {
 		}
 
 		/* (non-Javadoc)
-		 * @see cn.com.summall.search.commons.joda.TimeZoneRounding#calc(long)
+		 * @see cn.com.rebirth.commons.joda.TimeZoneRounding#calc(long)
 		 */
 		@Override
 		public long calc(long utcMillis) {
@@ -262,7 +262,7 @@ public abstract class TimeZoneRounding {
 		}
 
 		/* (non-Javadoc)
-		 * @see cn.com.summall.search.commons.joda.TimeZoneRounding#calc(long)
+		 * @see cn.com.rebirth.commons.joda.TimeZoneRounding#calc(long)
 		 */
 		@Override
 		public long calc(long utcMillis) {
@@ -300,7 +300,7 @@ public abstract class TimeZoneRounding {
 		}
 
 		/* (non-Javadoc)
-		 * @see cn.com.summall.search.commons.joda.TimeZoneRounding#calc(long)
+		 * @see cn.com.rebirth.commons.joda.TimeZoneRounding#calc(long)
 		 */
 		@Override
 		public long calc(long utcMillis) {
@@ -332,7 +332,7 @@ public abstract class TimeZoneRounding {
 		}
 
 		/* (non-Javadoc)
-		 * @see cn.com.summall.search.commons.joda.TimeZoneRounding#calc(long)
+		 * @see cn.com.rebirth.commons.joda.TimeZoneRounding#calc(long)
 		 */
 		@Override
 		public long calc(long utcMillis) {
@@ -370,7 +370,7 @@ public abstract class TimeZoneRounding {
 		}
 
 		/* (non-Javadoc)
-		 * @see cn.com.summall.search.commons.joda.TimeZoneRounding#calc(long)
+		 * @see cn.com.rebirth.commons.joda.TimeZoneRounding#calc(long)
 		 */
 		@Override
 		public long calc(long utcMillis) {
@@ -414,7 +414,7 @@ public abstract class TimeZoneRounding {
 		}
 
 		/* (non-Javadoc)
-		 * @see cn.com.summall.search.commons.joda.TimeZoneRounding#calc(long)
+		 * @see cn.com.rebirth.commons.joda.TimeZoneRounding#calc(long)
 		 */
 		@Override
 		public long calc(long utcMillis) {
@@ -451,7 +451,7 @@ public abstract class TimeZoneRounding {
 		}
 
 		/* (non-Javadoc)
-		 * @see cn.com.summall.search.commons.joda.TimeZoneRounding#calc(long)
+		 * @see cn.com.rebirth.commons.joda.TimeZoneRounding#calc(long)
 		 */
 		@Override
 		public long calc(long utcMillis) {
@@ -489,7 +489,7 @@ public abstract class TimeZoneRounding {
 		}
 
 		/* (non-Javadoc)
-		 * @see cn.com.summall.search.commons.joda.TimeZoneRounding#calc(long)
+		 * @see cn.com.rebirth.commons.joda.TimeZoneRounding#calc(long)
 		 */
 		@Override
 		public long calc(long utcMillis) {

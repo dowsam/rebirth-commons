@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons AdapterStreamInput.java 2012-3-29 15:15:17 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons AdapterStreamInput.java 2012-7-6 10:36:10 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.io.stream;
@@ -52,7 +52,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readByte()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readByte()
 	 */
 	@Override
 	public byte readByte() throws IOException {
@@ -61,7 +61,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readBytes(byte[], int, int)
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readBytes(byte[], int, int)
 	 */
 	@Override
 	public void readBytes(byte[] b, int offset, int len) throws IOException {
@@ -70,7 +70,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readBytesReference()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readBytesReference()
 	 */
 	@Override
 	public BytesHolder readBytesReference() throws IOException {
@@ -79,7 +79,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#reset()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#reset()
 	 */
 	@Override
 	public void reset() throws IOException {
@@ -88,7 +88,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#close()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#close()
 	 */
 	@Override
 	public void close() throws IOException {
@@ -108,7 +108,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readFully(byte[])
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readFully(byte[])
 	 */
 	@Override
 	public void readFully(byte[] b) throws IOException {
@@ -117,7 +117,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readShort()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readShort()
 	 */
 	@Override
 	public short readShort() throws IOException {
@@ -126,7 +126,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readInt()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readInt()
 	 */
 	@Override
 	public int readInt() throws IOException {
@@ -135,7 +135,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readVInt()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readVInt()
 	 */
 	@Override
 	public int readVInt() throws IOException {
@@ -144,7 +144,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readLong()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readLong()
 	 */
 	@Override
 	public long readLong() throws IOException {
@@ -153,7 +153,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readVLong()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readVLong()
 	 */
 	@Override
 	public long readVLong() throws IOException {
@@ -162,7 +162,7 @@ public abstract class AdapterStreamInput extends StreamInput {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.StreamInput#readUTF()
+	 * @see cn.com.rebirth.commons.io.stream.StreamInput#readUTF()
 	 */
 	@Override
 	public String readUTF() throws IOException {

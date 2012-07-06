@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons H2ServerUtils.java 2012-2-2 10:47:22 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons H2ServerUtils.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -14,6 +14,7 @@ import org.h2.tools.Server;
  * @author l.xue.nong
  */
 public abstract class H2ServerUtils {
+	
 	/** The pg. */
 	private static Server web, tcp, pg;
 
@@ -21,7 +22,6 @@ public abstract class H2ServerUtils {
 	 * Builds the h2 server.
 	 *
 	 * @param args the args
-	 * @return the server
 	 * @throws SQLException the sQL exception
 	 */
 	public static void buildH2Server(String... args) throws SQLException {

@@ -1,27 +1,27 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons Version.java 2012-7-4 9:42:12 l.xue.nong$$
+ * Info:rebirth-commons Version.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons;
 
 import java.io.Serializable;
 
 /**
- * 统一定义项目间的版本管理.
+ * The Interface Version.
  *
  * @author l.xue.nong
  */
 public interface Version extends Serializable {
 
 	/**
-	 * 获取该模块的版本号
+	 * Gets the module version.
 	 *
 	 * @return the module version
 	 */
 	public String getModuleVersion();
 
 	/**
-	 * 获取该模块的模块名称
+	 * Gets the module name.
 	 *
 	 * @return the module name
 	 */

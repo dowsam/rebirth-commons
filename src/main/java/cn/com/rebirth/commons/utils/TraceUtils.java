@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons TraceUtils.java 2012-2-2 11:01:43 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons TraceUtils.java 2012-7-6 10:22:12 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -13,6 +13,7 @@ import org.slf4j.MDC;
  * @author l.xue.nong
  */
 public abstract class TraceUtils {
+	
 	/** The Constant TRACE_ID_KEY. */
 	public static final String TRACE_ID_KEY = "traceId";
 
@@ -20,7 +21,7 @@ public abstract class TraceUtils {
 	public static final int TRACE_ID_LENGTH = 8;
 
 	/**
-	 * 开始Trace, 默认生成本次Trace的ID(8字符长)并放入MDC.
+	 * Begin trace.
 	 */
 	public static void beginTrace() {
 		String traceId = RandomStringUtils.randomAlphanumeric(TRACE_ID_LENGTH);
@@ -28,7 +29,7 @@ public abstract class TraceUtils {
 	}
 
 	/**
-	 * 开始Trace, 将traceId放入MDC.
+	 * Begin trace.
 	 *
 	 * @param traceId the trace id
 	 */
@@ -37,8 +38,7 @@ public abstract class TraceUtils {
 	}
 
 	/**
-	 * 结束一次Trace.
-	 * 清除traceId.
+	 * End trace.
 	 */
 	public static void endTrace() {
 		MDC.remove(TRACE_ID_KEY);

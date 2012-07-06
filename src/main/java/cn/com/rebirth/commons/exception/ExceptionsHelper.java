@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons ExceptionsHelper.java 2012-3-29 15:14:34 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ExceptionsHelper.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.exception;
@@ -30,7 +30,7 @@ public final class ExceptionsHelper {
 	public static Throwable unwrapCause(Throwable t) {
 		int counter = 0;
 		Throwable result = t;
-		while (result instanceof RestartWrapperException) {
+		while (result instanceof RebirthWrapperException) {
 			if (result.getCause() == null) {
 				return result;
 			}

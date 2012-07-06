@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons DataUtils.java 2012-2-2 10:40:54 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons DataUtils.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -16,11 +16,12 @@ import com.google.common.collect.Lists;
  * @author l.xue.nong
  */
 public abstract class DataUtils {
+	
 	/** The random. */
 	private static Random random = new Random();
 
 	/**
-	 * 返回随机ID.
+	 * Random id.
 	 *
 	 * @return the long
 	 */
@@ -29,7 +30,7 @@ public abstract class DataUtils {
 	}
 
 	/**
-	 * 返回随机名称, prefix字符串+随机数字.
+	 * Random name.
 	 *
 	 * @param prefix the prefix
 	 * @return the string
@@ -39,7 +40,7 @@ public abstract class DataUtils {
 	}
 
 	/**
-	 * 从输入list中随机返回一个对象.
+	 * Random one.
 	 *
 	 * @param <T> the generic type
 	 * @param list the list
@@ -50,7 +51,7 @@ public abstract class DataUtils {
 	}
 
 	/**
-	 * 从输入list中随机返回随机个对象.
+	 * Random some.
 	 *
 	 * @param <T> the generic type
 	 * @param list the list
@@ -61,7 +62,7 @@ public abstract class DataUtils {
 	}
 
 	/**
-	 * 从输入list中随机返回count个对象.
+	 * Random some.
 	 *
 	 * @param <T> the generic type
 	 * @param list the list
@@ -73,6 +74,11 @@ public abstract class DataUtils {
 		return list.subList(0, count);
 	}
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		List<Integer> list = Lists.newArrayList(1, 2, 3, 4);
 		Collections.shuffle(list);

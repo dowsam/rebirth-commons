@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons BeanUtils.java 2012-2-2 10:19:41 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons BeanUtils.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -16,6 +16,7 @@ import org.apache.commons.beanutils.PropertyUtilsBean;
  * @author l.xue.nong
  */
 public abstract class BeanUtils {
+	
 	/** The b. */
 	private static BeanUtilsBean b = BeanUtilsBean.getInstance();
 

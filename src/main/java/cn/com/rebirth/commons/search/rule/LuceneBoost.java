@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons LuceneBoost.java 2012-3-13 12:39:51 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons LuceneBoost.java 2012-7-6 10:22:16 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.rule;
 

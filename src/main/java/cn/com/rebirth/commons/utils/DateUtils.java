@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons DateUtils.java 2012-2-2 10:41:47 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons DateUtils.java 2012-7-6 10:22:17 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -21,10 +21,11 @@ import cn.com.rebirth.commons.FormatConstants;
  * @author l.xue.nong
  */
 public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
+	
 	/**
-	 * 返回当前时间.
+	 * Gets the current date time.
 	 *
-	 * @return 返回当前时间
+	 * @return the current date time
 	 */
 	public static Date getCurrentDateTime() {
 		java.util.Calendar calNow = java.util.Calendar.getInstance();
@@ -35,7 +36,7 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	/**
 	 * Gets the today.
 	 *
-	 * @return 返回今天日期，时间部分为0。例如：2006-4-8 00:00:00
+	 * @return the today
 	 */
 	public static Date getToday() {
 		return truncate(new Date(), Calendar.DATE);
@@ -44,17 +45,17 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	/**
 	 * Gets the today end.
 	 *
-	 * @return 返回今天日期，时间部分为23:59:59.999。例如：2006-4-19 23:59:59.999
+	 * @return the today end
 	 */
 	public static Date getTodayEnd() {
 		return getDayEnd(new Date());
 	}
 
 	/**
-	 * 将字符串转换为日期（不包括时间）.
+	 * Convert to date.
 	 *
-	 * @param dateString "yyyy-MM-dd"格式的日期字符串
-	 * @return 日期
+	 * @param dateString the date string
+	 * @return the date
 	 */
 	public static Date convertToDate(String dateString) {
 		try {
@@ -65,20 +66,20 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	}
 
 	/**
-	 * 检查字符串是否为日期格式yyyy-MM-dd.
+	 * Check date string.
 	 *
 	 * @param dateString the date string
-	 * @return true=是；false=否
+	 * @return true, if successful
 	 */
 	public static boolean checkDateString(String dateString) {
 		return (convertToDate(dateString) != null);
 	}
 
 	/**
-	 * 将字符串转换为日期（包括时间）.
+	 * Convert to date time.
 	 *
 	 * @param dateTimeString the date time string
-	 * @return 日期时间
+	 * @return the date
 	 */
 	public static Date convertToDateTime(String dateTimeString) {
 		try {
@@ -89,21 +90,21 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	}
 
 	/**
-	 * 检查字符串是否为日期时间格式yyyy-MM-dd HH:mm:ss.
+	 * Check date time string.
 	 *
 	 * @param dateTimeString the date time string
-	 * @return true=是；false=否
+	 * @return true, if successful
 	 */
 	public static boolean checkDateTimeString(String dateTimeString) {
 		return (convertToDateTime(dateTimeString) != null);
 	}
 
 	/**
-	 * 获取月底.
+	 * Gets the month end.
 	 *
-	 * @param year 年 4位年度
-	 * @param month 月 1~12
-	 * @return 月底的Date对象。例如：2006-3-31 23:59:59.999
+	 * @param year the year
+	 * @param month the month
+	 * @return the month end
 	 */
 	public static Date getMonthEnd(int year, int month) {
 		StringBuffer sb = new StringBuffer(10);
@@ -124,10 +125,10 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	}
 
 	/**
-	 * 获取月底.
+	 * Gets the month end.
 	 *
-	 * @param when 要计算月底的日期
-	 * @return 月底的Date对象。例如：2006-3-31 23:59:59.999
+	 * @param when the when
+	 * @return the month end
 	 */
 	public static Date getMonthEnd(Date when) {
 		Validate.notNull(when, "date must not be null !");
@@ -139,10 +140,10 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	}
 
 	/**
-	 * 获取给定日的最后一刻。.
+	 * Gets the day end.
 	 *
-	 * @param when 给定日
-	 * @return 最后一刻。例如：2006-4-19 23:59:59.999
+	 * @param when the when
+	 * @return the day end
 	 */
 	public static Date getDayEnd(Date when) {
 		Date date = truncate(when, Calendar.DATE);
@@ -152,10 +153,10 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	}
 
 	/**
-	 * 获取给定日的第一刻。.
+	 * Gets the day.
 	 *
-	 * @param when 给定日
-	 * @return 最后一刻。例如：2006-4-19 23:59:59.999
+	 * @param when the when
+	 * @return the day
 	 */
 	public static Date getDay(Date when) {
 		Date date = truncate(when, Calendar.DATE);
@@ -165,12 +166,12 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	}
 
 	/**
-	 * 日期加法.
+	 * Adds the.
 	 *
-	 * @param when 被计算的日期
-	 * @param field the time field. 在Calendar中定义的常数，例如Calendar.DATE
-	 * @param amount 加数
-	 * @return 计算后的日期
+	 * @param when the when
+	 * @param field the field
+	 * @param amount the amount
+	 * @return the date
 	 */
 	public static Date add(Date when, int field, int amount) {
 		Calendar calendar = Calendar.getInstance();
@@ -180,22 +181,22 @@ public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
 	}
 
 	/**
-	 * 计算给定的日期加上给定的天数。.
+	 * Adds the days.
 	 *
-	 * @param when 给定的日期
-	 * @param amount 给定的天数
-	 * @return 计算后的日期
+	 * @param when the when
+	 * @param amount the amount
+	 * @return the date
 	 */
 	public static Date addDays(Date when, int amount) {
 		return add(when, Calendar.DAY_OF_YEAR, amount);
 	}
 
 	/**
-	 * 计算给定的日期加上给定的月数。.
+	 * Adds the months.
 	 *
-	 * @param when 给定的日期
-	 * @param amount 给定的月数
-	 * @return 计算后的日期
+	 * @param when the when
+	 * @param amount the amount
+	 * @return the date
 	 */
 	public static Date addMonths(Date when, int amount) {
 		return add(when, Calendar.MONTH, amount);

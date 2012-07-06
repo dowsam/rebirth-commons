@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons SpringContextHolder.java 2012-2-27 10:33:20 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons SpringContextHolder.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -31,7 +31,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	private static Logger logger = LoggerFactory.getLogger(SpringContextHolder.class);
 
 	/**
-	 * 取得存储在静态变量中的ApplicationContext.
+	 * Gets the application context.
 	 *
 	 * @return the application context
 	 */
@@ -41,7 +41,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * 从静态变量applicationContext中取得Bean, 自动转型为所赋值对象的类型.
+	 * Gets the bean.
 	 *
 	 * @param <T> the generic type
 	 * @param name the name
@@ -54,7 +54,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * 从静态变量applicationContext中取得Bean, 自动转型为所赋值对象的类型.
+	 * Gets the bean.
 	 *
 	 * @param <T> the generic type
 	 * @param requiredType the required type
@@ -66,17 +66,15 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * 清除SpringContextHolder中的ApplicationContext为Null.
+	 * Clear holder.
 	 */
 	public static void clearHolder() {
 		logger.debug("清除SpringContextHolder中的ApplicationContext:" + applicationContext);
 		applicationContext = null;
 	}
 
-	/**
-	 * 实现ApplicationContextAware接口, 注入Context到静态变量中.
-	 *
-	 * @param applicationContext the new application context
+	/* (non-Javadoc)
+	 * @see org.springframework.context.ApplicationContextAware#setApplicationContext(org.springframework.context.ApplicationContext)
 	 */
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) {
@@ -90,10 +88,8 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 		SpringContextHolder.applicationContext = applicationContext; //NOSONAR
 	}
 
-	/**
-	 * 实现DisposableBean接口, 在Context关闭时清理静态变量.
-	 *
-	 * @throws Exception the exception
+	/* (non-Javadoc)
+	 * @see org.springframework.beans.factory.DisposableBean#destroy()
 	 */
 	@Override
 	public void destroy() throws Exception {
@@ -101,7 +97,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * 检查ApplicationContext不为空.
+	 * Assert context injected.
 	 */
 	private static void assertContextInjected() {
 		Validate.validState(applicationContext != null,

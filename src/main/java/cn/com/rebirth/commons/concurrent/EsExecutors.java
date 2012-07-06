@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons EsExecutors.java 2012-3-29 15:15:08 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons EsExecutors.java 2012-7-6 10:22:17 l.xue.nong$$
  */
 
 
@@ -79,9 +79,9 @@ public class EsExecutors {
 	public static String threadName(Settings settings, String namePrefix) {
 		String name = settings.get("name");
 		if (name == null) {
-			name = "Restart";
+			name = "rebirth";
 		} else {
-			name = "Restart[" + name + "]";
+			name = "rebirth[" + name + "]";
 		}
 		return name + namePrefix;
 	}

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons TimeUtils.java 2012-2-2 11:00:17 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons TimeUtils.java 2012-7-6 10:22:12 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
  * @author l.xue.nong
  */
 public abstract class TimeUtils {
+	
 	/** The logger. */
 	private static Logger logger = LoggerFactory.getLogger(TimeUtils.class);
 
@@ -22,14 +23,14 @@ public abstract class TimeUtils {
 	private static Stack<Long> times = new Stack<Long>();
 
 	/**
-	 * 开始统计时间.
+	 * Begin.
 	 */
 	public static void begin() {
 		times.add(System.currentTimeMillis());
 	}
 
 	/**
-	 * 结束统计时间 并输出结果.
+	 * End.
 	 *
 	 * @param title the title
 	 */
@@ -39,7 +40,7 @@ public abstract class TimeUtils {
 	}
 
 	/**
-	 * sleep等待,单位毫秒.
+	 * Sleep.
 	 *
 	 * @param millis the millis
 	 */

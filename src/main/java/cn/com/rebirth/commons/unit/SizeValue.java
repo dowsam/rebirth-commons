@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons SizeValue.java 2012-3-29 15:15:10 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons SizeValue.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 
 
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 import cn.com.rebirth.commons.Strings;
-import cn.com.rebirth.commons.exception.RestartParseException;
+import cn.com.rebirth.commons.exception.RebirthParseException;
 import cn.com.rebirth.commons.io.stream.StreamInput;
 import cn.com.rebirth.commons.io.stream.StreamOutput;
 import cn.com.rebirth.commons.io.stream.Streamable;
@@ -233,9 +233,9 @@ public class SizeValue implements Serializable, Streamable {
 	 *
 	 * @param sValue the s value
 	 * @return the size value
-	 * @throws RestartParseException the sum mall search parse exception
+	 * @throws rebirthParseException the rebirth parse exception
 	 */
-	public static SizeValue parseSizeValue(String sValue) throws RestartParseException {
+	public static SizeValue parseSizeValue(String sValue) throws RebirthParseException {
 		return SizeValue.parseSizeValue(sValue, null);
 	}
 
@@ -246,9 +246,9 @@ public class SizeValue implements Serializable, Streamable {
 	 * @param sValue the s value
 	 * @param defaultValue the default value
 	 * @return the size value
-	 * @throws RestartParseException the sum mall search parse exception
+	 * @throws rebirthParseException the rebirth parse exception
 	 */
-	public static SizeValue parseSizeValue(String sValue, SizeValue defaultValue) throws RestartParseException {
+	public static SizeValue parseSizeValue(String sValue, SizeValue defaultValue) throws RebirthParseException {
 		if (sValue == null) {
 			return defaultValue;
 		}
@@ -266,7 +266,7 @@ public class SizeValue implements Serializable, Streamable {
 				singles = Long.parseLong(sValue);
 			}
 		} catch (NumberFormatException e) {
-			throw new RestartParseException("Failed to parse [" + sValue + "]", e);
+			throw new RebirthParseException("Failed to parse [" + sValue + "]", e);
 		}
 		return new SizeValue(singles, SizeUnit.SINGLE);
 	}
@@ -286,9 +286,6 @@ public class SizeValue implements Serializable, Streamable {
 	}
 
 	
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.Streamable#readFrom(cn.com.summall.search.commons.io.stream.StreamInput)
-	 */
 	@Override
 	public void readFrom(StreamInput in) throws IOException {
 		size = in.readVLong();
@@ -296,9 +293,6 @@ public class SizeValue implements Serializable, Streamable {
 	}
 
 	
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.Streamable#writeTo(cn.com.summall.search.commons.io.stream.StreamOutput)
-	 */
 	@Override
 	public void writeTo(StreamOutput out) throws IOException {
 		out.writeVLong(singles());

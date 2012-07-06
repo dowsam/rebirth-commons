@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ZooKeeperExpand.java 2012-3-30 14:47:02 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ZooKeeperExpand.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.config.support;
 
@@ -58,9 +58,6 @@ public class ZooKeeperExpand extends AbstractZooKeeperClient implements ZooKeepe
 		super(config);
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.commons.search.config.AbstractZooKeeperClient#doCreate(org.I0Itec.zkclient.ZkClient, java.lang.String, java.lang.Object)
-	 */
 	@Override
 	protected void doCreate(ZkClient zkClient, String path, Object data) throws Exception {
 		if (!ZkUtils.pathExists(zkClient, path)) {
@@ -70,17 +67,11 @@ public class ZooKeeperExpand extends AbstractZooKeeperClient implements ZooKeepe
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.commons.search.config.AbstractZooKeeperClient#doList(org.I0Itec.zkclient.ZkClient, java.lang.String)
-	 */
 	@Override
 	protected List<String> doList(ZkClient client, String path) throws Exception {
 		return ZkUtils.getChildren(client, path);
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.commons.search.config.AbstractZooKeeperClient#doDelete(org.I0Itec.zkclient.ZkClient, java.lang.String)
-	 */
 	@Override
 	protected void doDelete(ZkClient zkClient, String path) throws Exception {
 		ZkUtils.deletePathRecursive(zkClient, path);

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons CollectionMapperUtils.java 2012-2-2 10:35:33 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons CollectionMapperUtils.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -39,11 +39,11 @@ public abstract class CollectionMapperUtils {
 	}
 
 	/**
-	 * 提取集合中的对象的属性(通过Getter函数), 组合成Map.
+	 * Extract to map.
 	 *
-	 * @param collection 来源集合.
-	 * @param keyPropertyName 要提取为Map中的Key值的属性名.
-	 * @param valuePropertyName 要提取为Map中的Value值的属性名.
+	 * @param collection the collection
+	 * @param keyPropertyName the key property name
+	 * @param valuePropertyName the value property name
 	 * @return the map
 	 */
 	public static Map extractToMap(final Collection collection, final String keyPropertyName,
@@ -63,10 +63,10 @@ public abstract class CollectionMapperUtils {
 	}
 
 	/**
-	 * 提取集合中的对象的属性(通过Getter函数), 组合成List.
+	 * Extract to list.
 	 *
-	 * @param collection 来源集合.
-	 * @param propertyName 要提取的属性名.
+	 * @param collection the collection
+	 * @param propertyName the property name
 	 * @return the list
 	 */
 	@SuppressWarnings("rawtypes")
@@ -85,11 +85,11 @@ public abstract class CollectionMapperUtils {
 	}
 
 	/**
-	 * 提取集合中的对象的属性(通过Getter函数), 组合成由分割符分隔的字符串.
+	 * Extract to string.
 	 *
-	 * @param collection 来源集合.
-	 * @param propertyName 要提取的属性名.
-	 * @param separator 分隔符.
+	 * @param collection the collection
+	 * @param propertyName the property name
+	 * @param separator the separator
 	 * @return the string
 	 */
 	public static String extractToString(final Collection collection, final String propertyName, final String separator) {

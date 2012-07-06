@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons FormatConstants.java 2012-7-4 9:39:31 l.xue.nong$$
+ * Info:rebirth-commons FormatConstants.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons;
 
@@ -8,11 +8,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 /**
- * 定义格式化常量的接口语义.
+ * The Interface FormatConstants.
  *
  * @author l.xue.nong
  */
 public interface FormatConstants extends Constants {
+	
 	/** The Constant DATE_FORMAT. */
 	public static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd", java.util.Locale.CHINA);
 

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons ThreadRenamingRunnable.java 2012-3-29 15:15:15 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ThreadRenamingRunnable.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.thread;

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons TimeValue.java 2012-3-29 15:15:09 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons TimeValue.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 
 
@@ -16,7 +16,7 @@ import org.joda.time.format.PeriodFormat;
 import org.joda.time.format.PeriodFormatter;
 
 import cn.com.rebirth.commons.Strings;
-import cn.com.rebirth.commons.exception.RestartParseException;
+import cn.com.rebirth.commons.exception.RebirthParseException;
 import cn.com.rebirth.commons.io.stream.StreamInput;
 import cn.com.rebirth.commons.io.stream.StreamOutput;
 import cn.com.rebirth.commons.io.stream.Streamable;
@@ -484,7 +484,7 @@ public class TimeValue implements Serializable, Streamable {
 			}
 			return new TimeValue(millis, TimeUnit.MILLISECONDS);
 		} catch (NumberFormatException e) {
-			throw new RestartParseException("Failed to parse [" + sValue + "]", e);
+			throw new RebirthParseException("Failed to parse [" + sValue + "]", e);
 		}
 	}
 
@@ -531,9 +531,6 @@ public class TimeValue implements Serializable, Streamable {
 	}
 
 	
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.Streamable#readFrom(cn.com.summall.search.commons.io.stream.StreamInput)
-	 */
 	@Override
 	public void readFrom(StreamInput in) throws IOException {
 		duration = in.readLong();
@@ -541,9 +538,6 @@ public class TimeValue implements Serializable, Streamable {
 	}
 
 	
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.Streamable#writeTo(cn.com.summall.search.commons.io.stream.StreamOutput)
-	 */
 	@Override
 	public void writeTo(StreamOutput out) throws IOException {
 		out.writeLong(nanos());

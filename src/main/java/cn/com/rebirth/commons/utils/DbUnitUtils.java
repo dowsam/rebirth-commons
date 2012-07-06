@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons DbUnitUtils.java 2012-2-2 10:43:34 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons DbUnitUtils.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -35,7 +35,7 @@ public abstract class DbUnitUtils {
 	private static ResourceLoader resourceLoader = new DefaultResourceLoader();
 
 	/**
-	 * 初始化XML数据文件到H2数据库, XML数据文件中涉及的表在插入数据前先进行清除.
+	 * Load data.
 	 *
 	 * @param h2DataSource the h2 data source
 	 * @param xmlFilePaths the xml file paths
@@ -46,7 +46,7 @@ public abstract class DbUnitUtils {
 	}
 
 	/**
-	 * 插入XML数据文件到H2数据库.
+	 * Append data.
 	 *
 	 * @param h2DataSource the h2 data source
 	 * @param xmlFilePaths the xml file paths
@@ -57,7 +57,7 @@ public abstract class DbUnitUtils {
 	}
 
 	/**
-	 * 在H2数据库中删除XML数据文件中涉及的表的数据.
+	 * Removes the data.
 	 *
 	 * @param h2DataSource the h2 data source
 	 * @param xmlFilePaths the xml file paths
@@ -68,7 +68,7 @@ public abstract class DbUnitUtils {
 	}
 
 	/**
-	 * 在ClassPath中查找XML数据文件并执行DBUnit Operation.
+	 * Execute.
 	 *
 	 * @param operation the operation
 	 * @param h2DataSource the h2 data source

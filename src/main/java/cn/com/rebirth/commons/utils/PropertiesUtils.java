@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons PropertiesUtils.java 2012-2-2 10:55:15 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons PropertiesUtils.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -23,6 +23,7 @@ import org.springframework.util.PropertiesPersister;
  * @author l.xue.nong
  */
 public abstract class PropertiesUtils {
+	
 	/** The Constant DEFAULT_ENCODING. */
 	private static final String DEFAULT_ENCODING = "UTF-8";
 
@@ -36,12 +37,11 @@ public abstract class PropertiesUtils {
 	private static ResourceLoader resourceLoader = new DefaultResourceLoader();
 
 	/**
-	 * 载入多个properties文件, 相同的属性最后载入的文件将会覆盖之前的载入.
+	 * Load properties.
 	 *
 	 * @param locations the locations
 	 * @return the properties
 	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @see org.springframework.beans.factory.config.PropertyPlaceholderConfigurer
 	 */
 	public static Properties loadProperties(String... locations) throws IOException {
 		Properties props = new Properties();

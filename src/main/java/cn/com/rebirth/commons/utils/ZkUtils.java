@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ZkUtils.java 2012-3-19 16:23:59 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ZkUtils.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -27,7 +27,7 @@ public class ZkUtils {
 	private static Logger logger = LoggerFactory.getLogger(ZkUtils.class);
 
 	/**
-	 * make sure a persiste.nt path exists in ZK. Create the path if not exist.
+	 * Make sure persistent path exists.
 	 *
 	 * @param client the client
 	 * @param path the path
@@ -46,7 +46,7 @@ public class ZkUtils {
 	}
 
 	/**
-	 * create the parent path.
+	 * Creates the parent path.
 	 *
 	 * @param client the client
 	 * @param path the path
@@ -60,8 +60,7 @@ public class ZkUtils {
 	}
 
 	/**
-	 * Create an ephemeral node with the given path and data. Create parents if
-	 * necessary.
+	 * Creates the ephemeral path.
 	 *
 	 * @param client the client
 	 * @param path the path
@@ -79,8 +78,7 @@ public class ZkUtils {
 	}
 
 	/**
-	 * Create an ephemeral node with the given path and data. Throw
-	 * NodeExistException if node already exists.
+	 * Creates the ephemeral path expect conflict.
 	 *
 	 * @param client the client
 	 * @param path the path
@@ -118,8 +116,7 @@ public class ZkUtils {
 	}
 
 	/**
-	 * Update the value of a persistent node with the given path and data.
-	 * create parrent directory if necessary. Never throw NodeExistException.
+	 * Update persistent path.
 	 *
 	 * @param client the client
 	 * @param path the path
@@ -141,9 +138,10 @@ public class ZkUtils {
 	/**
 	 * Read data.
 	 *
+	 * @param <T> the generic type
 	 * @param client the client
 	 * @param path the path
-	 * @return the string
+	 * @return the t
 	 */
 	public static <T> T readData(final ZkClient client, final String path) {
 		return client.readData(path);
@@ -152,17 +150,17 @@ public class ZkUtils {
 	/**
 	 * Read data maybe null.
 	 *
+	 * @param <T> the generic type
 	 * @param client the client
 	 * @param path the path
-	 * @return the string
+	 * @return the t
 	 */
 	public static <T> T readDataMaybeNull(final ZkClient client, final String path) {
 		return client.readData(path, true);
 	}
 
 	/**
-	 * Update the value of a persistent node with the given path and data.
-	 * create parrent directory if necessary. Never throw NodeExistException.
+	 * Update ephemeral path.
 	 *
 	 * @param client the client
 	 * @param path the path
@@ -245,7 +243,7 @@ public class ZkUtils {
 	}
 
 	/**
-	 * Check if the given path exists.
+	 * Path exists.
 	 *
 	 * @param client the client
 	 * @param path the path
@@ -319,19 +317,19 @@ public class ZkUtils {
 		/** The zk root. */
 		public String zkRoot = "/meta";
 
-		/** If enable zookeeper. */
+		/** The zk enable. */
 		public boolean zkEnable = true;
 
-		/** ZK host string. */
+		/** The zk connect. */
 		public String zkConnect;
 
-		/** zookeeper session timeout. */
+		/** The zk session timeout ms. */
 		public int zkSessionTimeoutMs = 30000;
 
-		/** the max time that the client waits to establish a connection to zookeeper. */
+		/** The zk connection timeout ms. */
 		public int zkConnectionTimeoutMs = 30000;
 
-		/** how far a ZK follower can be behind a ZK leader. */
+		/** The zk sync time ms. */
 		public int zkSyncTimeMs = 5000;
 
 		/**

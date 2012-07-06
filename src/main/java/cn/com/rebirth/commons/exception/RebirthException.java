@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons SumMallSearchException.java 2012-3-29 15:14:34 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons rebirthException.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.exception;
 
 
 /**
- * The Class SumMallSearchException.
+ * The Class rebirthException.
  *
  * @author l.xue.nong
  */
-public class RestartException extends RuntimeException {
+public class RebirthException extends RuntimeException {
 
 	
 	/** The Constant serialVersionUID. */
@@ -19,22 +19,22 @@ public class RestartException extends RuntimeException {
 
 	
 	/**
-	 * Instantiates a new sum mall search exception.
+	 * Instantiates a new rebirth exception.
 	 *
 	 * @param msg the msg
 	 */
-	public RestartException(String msg) {
+	public RebirthException(String msg) {
 		super(msg);
 	}
 
 	
 	/**
-	 * Instantiates a new sum mall search exception.
+	 * Instantiates a new rebirth exception.
 	 *
 	 * @param msg the msg
 	 * @param cause the cause
 	 */
-	public RestartException(String msg, Throwable cause) {
+	public RebirthException(String msg, Throwable cause) {
 		super(msg, cause);
 	}
 
@@ -58,8 +58,8 @@ public class RestartException extends RuntimeException {
 		if (getCause() != null) {
 			StringBuilder sb = new StringBuilder();
 			sb.append(toString()).append("; ");
-			if (getCause() instanceof RestartException) {
-				sb.append(((RestartException) getCause()).getDetailedMessage());
+			if (getCause() instanceof RebirthException) {
+				sb.append(((RebirthException) getCause()).getDetailedMessage());
 			} else {
 				sb.append(getCause());
 			}
@@ -114,8 +114,8 @@ public class RestartException extends RuntimeException {
 		if (cause == this) {
 			return false;
 		}
-		if (cause instanceof RestartException) {
-			return ((RestartException) cause).contains(exType);
+		if (cause instanceof RebirthException) {
+			return ((RebirthException) cause).contains(exType);
 		} else {
 			while (cause != null) {
 				if (exType.isInstance(cause)) {

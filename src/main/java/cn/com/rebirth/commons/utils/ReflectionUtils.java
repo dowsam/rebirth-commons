@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ReflectionUtils.java 2012-2-2 10:36:57 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ReflectionUtils.java 2012-7-6 10:22:16 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
  * @author l.xue.nong
  */
 public abstract class ReflectionUtils {
+	
 	/** The Constant CGLIB_CLASS_SEPARATOR. */
 	public static final String CGLIB_CLASS_SEPARATOR = "$$";
 
@@ -28,7 +29,7 @@ public abstract class ReflectionUtils {
 	private static Logger logger = LoggerFactory.getLogger(ReflectionUtils.class);
 
 	/**
-	 * 调用Getter方法.
+	 * Invoke getter method.
 	 *
 	 * @param obj the obj
 	 * @param propertyName the property name
@@ -40,7 +41,7 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 调用Setter方法.使用value的Class来查找Setter方法.
+	 * Invoke setter method.
 	 *
 	 * @param obj the obj
 	 * @param propertyName the property name
@@ -51,12 +52,12 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 调用Setter方法.
+	 * Invoke setter method.
 	 *
 	 * @param obj the obj
 	 * @param propertyName the property name
 	 * @param value the value
-	 * @param propertyType 用于查找Setter方法,为空时使用value的Class替代.
+	 * @param propertyType the property type
 	 */
 	public static void invokeSetterMethod(Object obj, String propertyName, Object value, Class<?> propertyType) {
 		Class<?> type = propertyType != null ? propertyType : value.getClass();
@@ -65,7 +66,7 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 直接读取对象属性值, 无视private/protected修饰符, 不经过getter函数.
+	 * Gets the field value.
 	 *
 	 * @param obj the obj
 	 * @param fieldName the field name
@@ -88,7 +89,7 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 直接设置对象属性值, 无视private/protected修饰符, 不经过setter函数.
+	 * Sets the field value.
 	 *
 	 * @param obj the obj
 	 * @param fieldName the field name
@@ -109,9 +110,7 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 循环向上转型, 获取对象的DeclaredField,	 并强制设置为可访问.
-	 * 
-	 * 如向上转型到Object仍无法找到, 返回null.
+	 * Gets the accessible field.
 	 *
 	 * @param obj the obj
 	 * @param fieldName the field name
@@ -132,7 +131,7 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 对于被cglib AOP过的对象, 取得真实的Class类型.
+	 * Gets the user class.
 	 *
 	 * @param clazz the clazz
 	 * @return the user class
@@ -148,8 +147,7 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 直接调用对象方法, 无视private/protected修饰符.
-	 * 用于一次性调用的情况.
+	 * Invoke method.
 	 *
 	 * @param obj the obj
 	 * @param methodName the method name
@@ -172,10 +170,7 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 循环向上转型, 获取对象的DeclaredMethod,并强制设置为可访问.
-	 * 如向上转型到Object仍无法找到, 返回null.
-	 * 
-	 * 用于方法需要被多次调用的情况. 先使用本函数先取得Method,然后调用Method.invoke(Object obj, Object... args)
+	 * Gets the accessible method.
 	 *
 	 * @param obj the obj
 	 * @param methodName the method name
@@ -201,14 +196,11 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 通过反射, 获得Class定义中声明的父类的泛型参数的类型.
-	 * 如无法找到, 返回Object.class.
-	 * eg.
-	 * public UserDao extends HibernateDao<User>
+	 * Gets the super class genric type.
 	 *
 	 * @param <T> the generic type
-	 * @param clazz The class to introspect
-	 * @return the first generic declaration, or Object.class if cannot be determined
+	 * @param clazz the clazz
+	 * @return the super class genric type
 	 */
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -217,14 +209,11 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 通过反射, 获得Class定义中声明的父类的泛型参数的类型.
-	 * 如无法找到, 返回Object.class.
-	 * 
-	 * 如public UserDao extends HibernateDao<User,Long>
+	 * Gets the super class genric type.
 	 *
-	 * @param clazz clazz The class to introspect
-	 * @param index the Index of the generic ddeclaration,start from 0.
-	 * @return the index generic declaration, or Object.class if cannot be determined
+	 * @param clazz the clazz
+	 * @param index the index
+	 * @return the super class genric type
 	 */
 
 	@SuppressWarnings("rawtypes")
@@ -254,7 +243,7 @@ public abstract class ReflectionUtils {
 	}
 
 	/**
-	 * 将反射时的checked exception转换为unchecked exception.
+	 * Convert reflection exception to unchecked.
 	 *
 	 * @param e the e
 	 * @return the runtime exception

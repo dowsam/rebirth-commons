@@ -1,15 +1,16 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons WsConstants.java 2012-7-4 9:40:42 l.xue.nong$$
+ * Info:rebirth-commons WsConstants.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons;
 
 /**
- * WebService 及其它一些外围定义的常量.
+ * The Interface WsConstants.
  *
  * @author l.xue.nong
  */
 public interface WsConstants extends Constants {
-	/** 项目内统一的XML charset定义, for REST. */
+	
+	/** The Constant CHARSET. */
 	public static final String CHARSET = ";charset=UTF-8";
 }

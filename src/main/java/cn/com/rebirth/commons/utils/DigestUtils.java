@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons DigestUtils.java 2012-2-2 10:45:30 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons DigestUtils.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -15,6 +15,7 @@ import java.security.MessageDigest;
  * @author l.xue.nong
  */
 public abstract class DigestUtils {
+	
 	/** The Constant SHA1. */
 	private static final String SHA1 = "SHA-1";
 
@@ -23,7 +24,7 @@ public abstract class DigestUtils {
 
 	// -- String Hash function --//
 	/**
-	 * 对输入字符串进行sha1散列, 返回Hex编码的结果.
+	 * Sha1 to hex.
 	 *
 	 * @param input the input
 	 * @return the string
@@ -34,7 +35,7 @@ public abstract class DigestUtils {
 	}
 
 	/**
-	 * 对输入字符串进行sha1散列, 返回Base64编码的结果.
+	 * Sha1 to base64.
 	 *
 	 * @param input the input
 	 * @return the string
@@ -45,7 +46,7 @@ public abstract class DigestUtils {
 	}
 
 	/**
-	 * 对输入字符串进行sha1散列, 返回Base64编码的URL安全的结果.
+	 * Sha1 to base64 url safe.
 	 *
 	 * @param input the input
 	 * @return the string
@@ -56,7 +57,7 @@ public abstract class DigestUtils {
 	}
 
 	/**
-	 * 对字符串进行散列, 支持md5与sha1算法.
+	 * Digest.
 	 *
 	 * @param input the input
 	 * @param algorithm the algorithm
@@ -73,7 +74,7 @@ public abstract class DigestUtils {
 
 	// -- File Hash function --//
 	/**
-	 * 对文件进行md5散列,返回Hex编码结果.
+	 * Md5 to hex.
 	 *
 	 * @param input the input
 	 * @return the string
@@ -84,7 +85,7 @@ public abstract class DigestUtils {
 	}
 
 	/**
-	 * 对文件进行sha1散列,返回Hex编码结果.
+	 * Sha1 to hex.
 	 *
 	 * @param input the input
 	 * @return the string
@@ -95,7 +96,7 @@ public abstract class DigestUtils {
 	}
 
 	/**
-	 * 对文件进行散列, 支持md5与sha1算法.
+	 * Digest.
 	 *
 	 * @param input the input
 	 * @param algorithm the algorithm

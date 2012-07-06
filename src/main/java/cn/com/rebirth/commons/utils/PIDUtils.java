@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons PIDUtils.java 2012-2-2 10:54:46 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons PIDUtils.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -21,6 +21,7 @@ import java.util.StringTokenizer;
  * @author l.xue.nong
  */
 public abstract class PIDUtils {
+	
 	/**
 	 * Instantiates a new pID utils.
 	 */
@@ -29,9 +30,9 @@ public abstract class PIDUtils {
 	}
 
 	/**
-	 * Gets the pID.
+	 * Gets the pid.
 	 *
-	 * @return the pID
+	 * @return the pid
 	 */
 	public static String getPID() {
 		String pid = System.getProperty("pid");

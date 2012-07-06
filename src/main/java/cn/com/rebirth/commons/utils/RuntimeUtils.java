@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons RuntimeUtils.java 2012-2-2 13:35:34 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons RuntimeUtils.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -14,8 +14,7 @@ import java.lang.ref.WeakReference;
 public abstract class RuntimeUtils {
 
 	/**
-	 * This method guarantees that garbage collection is
-	 * done unlike <code>{@link System#gc()}</code>.
+	 * Gc.
 	 */
 	public static void gc() {
 		Object obj = new Object();
@@ -26,7 +25,7 @@ public abstract class RuntimeUtils {
 	}
 
 	/**
-	 * calls <code>{@link #gc()}</code> <code>count</code> times.
+	 * Gc.
 	 *
 	 * @param count the count
 	 */
@@ -36,8 +35,7 @@ public abstract class RuntimeUtils {
 	}
 
 	/**
-	 * This method guarantees that garbage colleciton is
-	 * done after JVM shutdown is initialized.
+	 * Gc on exit.
 	 */
 	public static void gcOnExit() {
 		Runtime.getRuntime().addShutdownHook(new Thread() {

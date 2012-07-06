@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ExceptionUtils.java 2012-2-2 10:46:20 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ExceptionUtils.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -13,8 +13,9 @@ import java.io.StringWriter;
  * @author l.xue.nong
  */
 public abstract class ExceptionUtils {
+	
 	/**
-	 * 将CheckedException转换为UnCheckedException.
+	 * Unchecked.
 	 *
 	 * @param e the e
 	 * @return the runtime exception
@@ -27,7 +28,7 @@ public abstract class ExceptionUtils {
 	}
 
 	/**
-	 * 将ErrorStack转化为String.
+	 * Gets the stack trace as string.
 	 *
 	 * @param e the e
 	 * @return the stack trace as string

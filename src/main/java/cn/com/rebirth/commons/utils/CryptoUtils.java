@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons CryptoUtils.java 2012-2-2 10:39:29 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons CryptoUtils.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -39,10 +39,10 @@ public abstract class CryptoUtils {
 
 	//-- HMAC-SHA1 funciton --//
 	/**
-	 * 使用HMAC-SHA1进行消息签名, 返回字节数组,长度为20字节.
+	 * Hmac sha1.
 	 *
-	 * @param input 原始输入字符串
-	 * @param keyBytes HMAC-SHA1密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the byte[]
 	 */
 	public static byte[] hmacSha1(String input, byte[] keyBytes) {
@@ -57,12 +57,11 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用HMAC-SHA1进行消息签名, 返回Hex编码的结果,长度为40字符.
+	 * Hmac sha1 to hex.
 	 *
 	 * @param input the input
 	 * @param keyBytes the key bytes
 	 * @return the string
-	 * @see #hmacSha1(String, byte[])
 	 */
 	public static String hmacSha1ToHex(String input, byte[] keyBytes) {
 		byte[] macResult = hmacSha1(input, keyBytes);
@@ -70,12 +69,11 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用HMAC-SHA1进行消息签名, 返回Base64编码的结果.
+	 * Hmac sha1 to base64.
 	 *
 	 * @param input the input
 	 * @param keyBytes the key bytes
 	 * @return the string
-	 * @see #hmacSha1(String, byte[])
 	 */
 	public static String hmacSha1ToBase64(String input, byte[] keyBytes) {
 		byte[] macResult = hmacSha1(input, keyBytes);
@@ -83,12 +81,11 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用HMAC-SHA1进行消息签名, 返回Base64编码的URL安全的结果.
+	 * Hmac sha1 to base64 url safe.
 	 *
 	 * @param input the input
 	 * @param keyBytes the key bytes
 	 * @return the string
-	 * @see #hmacSha1(String, byte[])
 	 */
 	public static String hmacSha1ToBase64UrlSafe(String input, byte[] keyBytes) {
 		byte[] macResult = hmacSha1(input, keyBytes);
@@ -96,11 +93,11 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 校验Hex编码的HMAC-SHA1签名是否正确.
+	 * Checks if is hex mac valid.
 	 *
-	 * @param hexMac Hex编码的签名
-	 * @param input 原始输入字符串
-	 * @param keyBytes 密钥
+	 * @param hexMac the hex mac
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return true, if is hex mac valid
 	 */
 	public static boolean isHexMacValid(String hexMac, String input, byte[] keyBytes) {
@@ -111,11 +108,11 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 校验Base64/Base64URLSafe编码的HMAC-SHA1签名是否正确.
+	 * Checks if is base64 mac valid.
 	 *
-	 * @param base64Mac Base64/Base64URLSafe编码的签名
-	 * @param input 原始输入字符串
-	 * @param keyBytes 密钥
+	 * @param base64Mac the base64 mac
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return true, if is base64 mac valid
 	 */
 	public static boolean isBase64MacValid(String base64Mac, String input, byte[] keyBytes) {
@@ -126,8 +123,7 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 生成HMAC-SHA1密钥,返回字节数组,长度为160位(20字节).
-	 * HMAC-SHA1算法对密钥无特殊要求, RFC2401建议最少长度为160位(20字节).
+	 * Generate mac sha1 key.
 	 *
 	 * @return the byte[]
 	 */
@@ -143,10 +139,9 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 生成HMAC-SHA1密钥, 返回Hex编码的结果,长度为40字符.
+	 * Generate mac sha1 hex key.
 	 *
 	 * @return the string
-	 * @see #generateMacSha1Key()
 	 */
 	public static String generateMacSha1HexKey() {
 		return EncodeUtils.encodeHex(generateMacSha1Key());
@@ -154,10 +149,10 @@ public abstract class CryptoUtils {
 
 	//-- DES function --//
 	/**
-	 * 使用DES加密原始字符串, 返回Hex编码的结果.
+	 * Des encrypt to hex.
 	 *
-	 * @param input 原始输入字符串
-	 * @param keyBytes 符合DES要求的密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the string
 	 */
 	public static String desEncryptToHex(String input, byte[] keyBytes) {
@@ -166,10 +161,10 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用DES加密原始字符串, 返回Base64编码的结果.
+	 * Des encrypt to base64.
 	 *
-	 * @param input 原始输入字符串
-	 * @param keyBytes 符合DES要求的密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the string
 	 */
 	public static String desEncryptToBase64(String input, byte[] keyBytes) {
@@ -178,10 +173,10 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用DES解密Hex编码的加密字符串, 返回原始字符串.
+	 * Des decrypt from hex.
 	 *
-	 * @param input Hex编码的加密字符串
-	 * @param keyBytes 符合DES要求的密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the string
 	 */
 	public static String desDecryptFromHex(String input, byte[] keyBytes) {
@@ -190,10 +185,10 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用DES解密Base64编码的加密字符串, 返回原始字符串.
+	 * Des decrypt from base64.
 	 *
-	 * @param input Base64编码的加密字符串
-	 * @param keyBytes 符合DES要求的密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the string
 	 */
 	public static String desDecryptFromBase64(String input, byte[] keyBytes) {
@@ -202,11 +197,11 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用DES加密或解密无编码的原始字节数组, 返回无编码的字节数组结果.
+	 * Des.
 	 *
-	 * @param inputBytes 原始字节数组
-	 * @param keyBytes 符合DES要求的密钥
-	 * @param mode Cipher.ENCRYPT_MODE 或 Cipher.DECRYPT_MODE
+	 * @param inputBytes the input bytes
+	 * @param keyBytes the key bytes
+	 * @param mode the mode
 	 * @return the byte[]
 	 */
 	private static byte[] des(byte[] inputBytes, byte[] keyBytes, int mode) {
@@ -224,7 +219,7 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 生成符合DES要求的密钥, 长度为64位(8字节).
+	 * Generate des key.
 	 *
 	 * @return the byte[]
 	 */
@@ -239,7 +234,7 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 生成符合DES要求的Hex编码密钥, 长度为16字符.
+	 * Generate des hex key.
 	 *
 	 * @return the string
 	 */
@@ -249,10 +244,10 @@ public abstract class CryptoUtils {
 
 	//-- AES funciton --//
 	/**
-	 * 使用AES加密原始字符串, 返回Hex编码的结果.
+	 * Aes encrypt to hex.
 	 *
-	 * @param input 原始输入字符串
-	 * @param keyBytes 符合AES要求的密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the string
 	 */
 	public static String aesEncryptToHex(String input, byte[] keyBytes) {
@@ -261,10 +256,10 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用AES加密原始字符串, 返回Base64编码的结果.
+	 * Aes encrypt to base64.
 	 *
-	 * @param input 原始输入字符串
-	 * @param keyBytes 符合AES要求的密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the string
 	 */
 	public static String aesEncryptToBase64(String input, byte[] keyBytes) {
@@ -273,10 +268,10 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用AES解密Hex编码的加密字符串, 返回原始字符串.
+	 * Aes decrypt from hex.
 	 *
-	 * @param input Hex编码的加密字符串
-	 * @param keyBytes 符合AES要求的密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the string
 	 */
 	public static String aesDecryptFromHex(String input, byte[] keyBytes) {
@@ -285,10 +280,10 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用AES解密Base64编码的加密字符串, 返回原始字符串.
+	 * Aes decrypt from base64.
 	 *
-	 * @param input Base64编码的加密字符串
-	 * @param keyBytes 符合AES要求的密钥
+	 * @param input the input
+	 * @param keyBytes the key bytes
 	 * @return the string
 	 */
 	public static String aesDecryptFromBase64(String input, byte[] keyBytes) {
@@ -297,11 +292,11 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 使用AES加密或解密无编码的原始字节数组, 返回无编码的字节数组结果.
+	 * Aes.
 	 *
-	 * @param inputBytes 原始字节数组
-	 * @param keyBytes 符合AES要求的密钥
-	 * @param mode Cipher.ENCRYPT_MODE 或 Cipher.DECRYPT_MODE
+	 * @param inputBytes the input bytes
+	 * @param keyBytes the key bytes
+	 * @param mode the mode
 	 * @return the byte[]
 	 */
 	private static byte[] aes(byte[] inputBytes, byte[] keyBytes, int mode) {
@@ -316,7 +311,7 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 生成AES密钥,返回字节数组,长度为128位(16字节).
+	 * Generate aes key.
 	 *
 	 * @return the byte[]
 	 */
@@ -332,10 +327,9 @@ public abstract class CryptoUtils {
 	}
 
 	/**
-	 * 生成AES密钥, 返回Hex编码的结果,长度为32字符.
+	 * Generate aes hex key.
 	 *
 	 * @return the string
-	 * @see #generateMacSha1Key()
 	 */
 	public static String generateAesHexKey() {
 		return EncodeUtils.encodeHex(generateAesKey());

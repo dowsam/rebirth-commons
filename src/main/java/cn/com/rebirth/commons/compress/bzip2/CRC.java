@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons CRC.java 2012-3-29 15:15:08 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons CRC.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.compress.bzip2;
@@ -44,7 +44,7 @@ final class CRC {
 			0xab710d06, 0xa6322bdf, 0xa2f33668, 0xbcb4666d, 0xb8757bda, 0xb5365d03, 0xb1f740b4 };
 
 	/**
-	 * Instantiates a new cRC.
+	 * Instantiates a new crc.
 	 */
 	CRC() {
 		initialiseCRC();

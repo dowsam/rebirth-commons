@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-core BaseEntity.java 2012-2-10 13:12:40 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons BaseEntity.java 2012-7-6 10:22:12 l.xue.nong$$
  */
 package cn.com.rebirth.commons.entity;
 
@@ -13,9 +13,9 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 /**
- * 统一定义id的entity基类.
- * @author l.xue.nong
+ * The Class BaseEntity.
  *
+ * @author l.xue.nong
  */
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
@@ -32,7 +32,6 @@ public abstract class BaseEntity implements Serializable {
 	/**
 	 * Gets the id.
 	 *
-	 * @param <T> the generic type
 	 * @return the id
 	 */
 	@Id

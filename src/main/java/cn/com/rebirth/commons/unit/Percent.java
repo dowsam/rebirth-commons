@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons Percent.java 2012-3-29 15:15:20 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons Percent.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.unit;
@@ -62,17 +62,11 @@ public class Percent implements Streamable, Serializable {
 		return p.substring(0, ix) + p.substring(ix, ix + 1) + "%";
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.Streamable#readFrom(cn.com.summall.search.commons.io.stream.StreamInput)
-	 */
 	@Override
 	public void readFrom(StreamInput in) throws IOException {
 		value = in.readDouble();
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.Streamable#writeTo(cn.com.summall.search.commons.io.stream.StreamOutput)
-	 */
 	@Override
 	public void writeTo(StreamOutput out) throws IOException {
 		out.writeDouble(value);

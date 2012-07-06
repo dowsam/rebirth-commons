@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons ByteSizeUnit.java 2012-3-29 15:15:08 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ByteSizeUnit.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 
 
@@ -15,7 +15,7 @@ package cn.com.rebirth.commons.unit;
 public enum ByteSizeUnit {
     
     
-    /** The BYTES. */
+    /** The bytes. */
     BYTES {
         @Override
         public long toBytes(long size) {
@@ -39,7 +39,7 @@ public enum ByteSizeUnit {
     },
     
     
-    /** The KB. */
+    /** The kb. */
     KB {
         @Override
         public long toBytes(long size) {
@@ -63,7 +63,7 @@ public enum ByteSizeUnit {
     },
     
     
-    /** The MB. */
+    /** The mb. */
     MB {
         @Override
         public long toBytes(long size) {
@@ -87,7 +87,7 @@ public enum ByteSizeUnit {
     },
     
     
-    /** The GB. */
+    /** The gb. */
     GB {
         @Override
         public long toBytes(long size) {

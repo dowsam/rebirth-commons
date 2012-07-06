@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons AbstractZooKeeperClient.java 2012-3-30 13:20:00 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons AbstractZooKeeperClient.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.config;
 
@@ -207,18 +207,12 @@ public abstract class AbstractZooKeeperClient implements ZooKeeperClient {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.commons.search.config.ZooKeeperClient#create(java.lang.String)
-	 */
 	@Override
 	public ZooKeeperClient create(String path) {
 		create(path, null);
 		return this;
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.commons.search.config.ZooKeeperClient#create(java.lang.String, byte[])
-	 */
 	@Override
 	public ZooKeeperClient create(String path, Object data) {
 		try {
@@ -239,9 +233,6 @@ public abstract class AbstractZooKeeperClient implements ZooKeeperClient {
 	 */
 	protected abstract void doCreate(ZkClient zkClient, String path, Object data) throws Exception;
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.commons.search.config.ZooKeeperClient#list(java.lang.String)
-	 */
 	@Override
 	public List<String> list(String path) {
 		try {
@@ -261,9 +252,6 @@ public abstract class AbstractZooKeeperClient implements ZooKeeperClient {
 	 */
 	protected abstract List<String> doList(ZkClient client, String path) throws Exception;
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.commons.search.config.ZooKeeperClient#delete(java.lang.String)
-	 */
 	@Override
 	public ZooKeeperClient delete(String path) {
 		try {
@@ -283,9 +271,6 @@ public abstract class AbstractZooKeeperClient implements ZooKeeperClient {
 	 */
 	protected abstract void doDelete(ZkClient zkClient, String path) throws Exception;
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.commons.search.config.ZooKeeperClient#get(java.lang.String)
-	 */
 	@Override
 	public <T> T get(String path) {
 		try {

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons AbstractSearchProperty.java 2012-4-17 10:50:33 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons AbstractSearchProperty.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.annotation;
 
@@ -223,6 +223,13 @@ public abstract class AbstractSearchProperty {
 		return getFieldName();
 	}
 
+	/**
+	 * Execute.
+	 *
+	 * @param <T> the generic type
+	 * @param action the action
+	 * @return the t
+	 */
 	public <T> T execute(ElementCallback<T> action) {
 		return action.doExecute(element);
 	}

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons EncodeUtils.java 2012-2-2 10:40:17 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons EncodeUtils.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -29,7 +29,7 @@ public abstract class EncodeUtils {
 
 	
 	/**
-	 * Hex编码, byte[]->String.
+	 * Encode hex.
 	 *
 	 * @param input the input
 	 * @return the string
@@ -39,7 +39,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Hex解码, String->byte[].
+	 * Decode hex.
 	 *
 	 * @param input the input
 	 * @return the byte[]
@@ -53,7 +53,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Base64编码, byte[]->String.
+	 * Encode base64.
 	 *
 	 * @param input the input
 	 * @return the string
@@ -63,7 +63,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Base64编码, URL安全(将Base64中的URL非法字符'+'和'/'转为'-'和'_', 见RFC3548).
+	 * Encode url safe base64.
 	 *
 	 * @param input the input
 	 * @return the string
@@ -73,7 +73,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Base64解码, String->byte[].
+	 * Decode base64.
 	 *
 	 * @param input the input
 	 * @return the byte[]
@@ -83,7 +83,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Base62(0_9A_Za_z)编码数字, long->String.
+	 * Encode base62.
 	 *
 	 * @param num the num
 	 * @return the string
@@ -93,7 +93,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Base62(0_9A_Za_z)解码数字, String->long.
+	 * Decode base62.
 	 *
 	 * @param str the str
 	 * @return the long
@@ -138,7 +138,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Html 转码.
+	 * Escape html.
 	 *
 	 * @param html the html
 	 * @return the string
@@ -148,7 +148,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Html 解码.
+	 * Unescape html.
 	 *
 	 * @param htmlEscaped the html escaped
 	 * @return the string
@@ -158,7 +158,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Xml 转码.
+	 * Escape xml.
 	 *
 	 * @param xml the xml
 	 * @return the string
@@ -168,7 +168,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Xml 解码.
+	 * Unescape xml.
 	 *
 	 * @param xmlEscaped the xml escaped
 	 * @return the string
@@ -178,7 +178,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Csv 转码.
+	 * Escape csv.
 	 *
 	 * @param csv the csv
 	 * @return the string
@@ -188,7 +188,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * Csv 解码.
+	 * Unescape csv.
 	 *
 	 * @param csvEscaped the csv escaped
 	 * @return the string
@@ -198,7 +198,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * URL 编码, Encode默认为UTF-8.
+	 * Url encode.
 	 *
 	 * @param part the part
 	 * @return the string
@@ -212,7 +212,7 @@ public abstract class EncodeUtils {
 	}
 
 	/**
-	 * URL 解码, Encode默认为UTF-8.
+	 * Url decode.
 	 *
 	 * @param part the part
 	 * @return the string

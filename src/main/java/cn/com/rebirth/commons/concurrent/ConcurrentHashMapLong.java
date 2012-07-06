@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons ConcurrentHashMapLong.java 2012-3-29 15:15:08 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ConcurrentHashMapLong.java 2012-7-6 10:35:33 l.xue.nong$$
  */
 
 
@@ -35,7 +35,7 @@ public class ConcurrentHashMapLong<T> implements ConcurrentMapLong<T> {
 
     
     /* (non-Javadoc)
-     * @see cn.com.summall.search.commons.util.concurrent.ConcurrentMapLong#get(long)
+     * @see cn.com.rebirth.commons.concurrent.ConcurrentMapLong#get(long)
      */
     @Override
     public T get(long key) {
@@ -44,7 +44,7 @@ public class ConcurrentHashMapLong<T> implements ConcurrentMapLong<T> {
 
     
     /* (non-Javadoc)
-     * @see cn.com.summall.search.commons.util.concurrent.ConcurrentMapLong#remove(long)
+     * @see cn.com.rebirth.commons.concurrent.ConcurrentMapLong#remove(long)
      */
     @Override
     public T remove(long key) {
@@ -53,7 +53,7 @@ public class ConcurrentHashMapLong<T> implements ConcurrentMapLong<T> {
 
     
     /* (non-Javadoc)
-     * @see cn.com.summall.search.commons.util.concurrent.ConcurrentMapLong#put(long, java.lang.Object)
+     * @see cn.com.rebirth.commons.concurrent.ConcurrentMapLong#put(long, java.lang.Object)
      */
     @Override
     public T put(long key, T value) {
@@ -62,7 +62,7 @@ public class ConcurrentHashMapLong<T> implements ConcurrentMapLong<T> {
 
     
     /* (non-Javadoc)
-     * @see cn.com.summall.search.commons.util.concurrent.ConcurrentMapLong#putIfAbsent(long, java.lang.Object)
+     * @see cn.com.rebirth.commons.concurrent.ConcurrentMapLong#putIfAbsent(long, java.lang.Object)
      */
     @Override
     public T putIfAbsent(long key, T value) {

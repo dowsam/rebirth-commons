@@ -1,13 +1,13 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons Regex.java 2012-3-29 15:15:08 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons Regex.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons.regex;
 
 import java.util.regex.Pattern;
 
 import cn.com.rebirth.commons.Strings;
-import cn.com.rebirth.commons.exception.RestartIllegalArgumentException;
+import cn.com.rebirth.commons.exception.RebirthIllegalArgumentException;
 
 
 
@@ -129,7 +129,7 @@ public class Regex {
 			} else if ("COMMENTS".equalsIgnoreCase(s)) {
 				pFlags |= Pattern.COMMENTS;
 			} else {
-				throw new RestartIllegalArgumentException("Unknown regex flag [" + s + "]");
+				throw new RebirthIllegalArgumentException("Unknown regex flag [" + s + "]");
 			}
 		}
 		return pFlags;

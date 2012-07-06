@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ThreadUtils.java 2012-2-2 10:49:31 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ThreadUtils.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -17,8 +17,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author l.xue.nong
  */
 public abstract class ThreadUtils {
+	
 	/**
-	 * sleep等待,单位毫秒,忽略InterruptedException.
+	 * Sleep.
 	 *
 	 * @param millis the millis
 	 */
@@ -31,14 +32,11 @@ public abstract class ThreadUtils {
 	}
 
 	/**
-	 * 按照ExecutorService JavaDoc示例代码编写的Graceful Shutdown方法.
-	 * 先使用shutdown尝试执行所有任务.
-	 * 超时后调用shutdownNow取消在workQueue中Pending的任务,并中断所有阻塞函数.
-	 * 另对在shutdown时线程本身被调用中断做了处理.
+	 * Graceful shutdown.
 	 *
 	 * @param pool the pool
 	 * @param shutdownTimeout the shutdown timeout
-	 * @param shutdownNowTimeout TODO
+	 * @param shutdownNowTimeout the shutdown now timeout
 	 * @param timeUnit the time unit
 	 */
 	public static void gracefulShutdown(ExecutorService pool, int shutdownTimeout, int shutdownNowTimeout,
@@ -62,7 +60,7 @@ public abstract class ThreadUtils {
 	}
 
 	/**
-	 * 直接调用shutdownNow的方法.
+	 * Normal shutdown.
 	 *
 	 * @param pool the pool
 	 * @param timeout the timeout
@@ -80,7 +78,7 @@ public abstract class ThreadUtils {
 	}
 
 	/**
-	 * 自定义ThreadFactory,可定制线程池的名称.
+	 * A factory for creating CustomizableThread objects.
 	 */
 	public static class CustomizableThreadFactory implements ThreadFactory {
 
@@ -108,7 +106,7 @@ public abstract class ThreadUtils {
 	}
 
 	/**
-	 * 获取Java VM中当前运行的所有线程.
+	 * Find all threads.
 	 *
 	 * @return the list
 	 */

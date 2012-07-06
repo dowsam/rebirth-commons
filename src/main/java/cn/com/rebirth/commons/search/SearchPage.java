@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons SearchPage.java 2012-7-4 10:22:57 l.xue.nong$$
+ * Info:rebirth-commons SearchPage.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search;
 

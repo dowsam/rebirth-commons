@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons VirtualMachineUtils.java 2012-2-2 11:03:06 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons VirtualMachineUtils.java 2012-7-6 10:22:17 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -18,8 +18,10 @@ import java.net.URLClassLoader;
  * @author l.xue.nong
  */
 public abstract class VirtualMachineUtils {
+	
 	/** The enabled. */
 	private static boolean enabled = isSupported();
+	
 	/** The jvm virtual machine. */
 	private static Object jvmVirtualMachine;
 
@@ -33,7 +35,7 @@ public abstract class VirtualMachineUtils {
 	/**
 	 * Checks if is supported.
 	 *
-	 * @return true si heapHisto supporté (jdk 1.6 de Sun ou de JRockit de BEA)
+	 * @return true, if is supported
 	 */
 	public static boolean isSupported() {
 		final String javaVersion = System.getProperty("java.version");
@@ -45,7 +47,7 @@ public abstract class VirtualMachineUtils {
 	/**
 	 * Checks if is j rockit.
 	 *
-	 * @return true si JVM JRockit
+	 * @return true, if is j rockit
 	 */
 	public static boolean isJRockit() {
 		return System.getProperty("java.vendor").contains("BEA");
@@ -54,8 +56,7 @@ public abstract class VirtualMachineUtils {
 	/**
 	 * Checks if is enabled.
 	 *
-	 * @return false si non supporté ou si un attachement ou un histogramme a échoué,
-	 * true si supporté et pas essayé ou si réussi
+	 * @return true, if is enabled
 	 */
 	public static synchronized boolean isEnabled() { // NOPMD
 		return enabled;
@@ -64,9 +65,8 @@ public abstract class VirtualMachineUtils {
 	/**
 	 * Gets the jvm virtual machine.
 	 *
-	 * @return Singleton initialisé à la demande de l'instance de com.sun.tools.attach.VirtualMachine,
-	 * null si enabled est false
-	 * @throws Exception e
+	 * @return the jvm virtual machine
+	 * @throws Exception the exception
 	 */
 	public static synchronized Object getJvmVirtualMachine() throws Exception { // NOPMD
 		if (jvmVirtualMachine == null) {
@@ -109,8 +109,9 @@ public abstract class VirtualMachineUtils {
 	}
 
 	/**
-	 * Détachement du singleton.
-	 * @throws Exception e
+	 * Detach.
+	 *
+	 * @throws Exception the exception
 	 */
 	public static synchronized void detach() throws Exception { // NOPMD
 		if (jvmVirtualMachine != null) {
@@ -124,8 +125,8 @@ public abstract class VirtualMachineUtils {
 	/**
 	 * Heap histo.
 	 *
-	 * @return flux contenant l'histogramme mémoire comme retourné par jmap -histo
-	 * @throws Exception e
+	 * @return the input stream
+	 * @throws Exception the exception
 	 */
 	public static InputStream heapHisto() throws Exception { // NOPMD
 		if (!isSupported()) {

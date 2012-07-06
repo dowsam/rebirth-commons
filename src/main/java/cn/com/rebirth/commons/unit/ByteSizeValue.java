@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons ByteSizeValue.java 2012-3-29 15:15:09 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ByteSizeValue.java 2012-7-6 10:22:16 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.unit;
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 import cn.com.rebirth.commons.Strings;
-import cn.com.rebirth.commons.exception.RestartParseException;
+import cn.com.rebirth.commons.exception.RebirthParseException;
 import cn.com.rebirth.commons.io.stream.StreamInput;
 import cn.com.rebirth.commons.io.stream.StreamOutput;
 import cn.com.rebirth.commons.io.stream.Streamable;
@@ -209,9 +209,9 @@ public class ByteSizeValue implements Serializable, Streamable {
 	 *
 	 * @param sValue the s value
 	 * @return the byte size value
-	 * @throws RestartParseException the sum mall search parse exception
+	 * @throws rebirthParseException the rebirth parse exception
 	 */
-	public static ByteSizeValue parseBytesSizeValue(String sValue) throws RestartParseException {
+	public static ByteSizeValue parseBytesSizeValue(String sValue) throws RebirthParseException {
 		return ByteSizeValue.parseBytesSizeValue(sValue, null);
 	}
 
@@ -221,10 +221,10 @@ public class ByteSizeValue implements Serializable, Streamable {
 	 * @param sValue the s value
 	 * @param defaultValue the default value
 	 * @return the byte size value
-	 * @throws RestartParseException the sum mall search parse exception
+	 * @throws rebirthParseException the rebirth parse exception
 	 */
 	public static ByteSizeValue parseBytesSizeValue(String sValue, ByteSizeValue defaultValue)
-			throws RestartParseException {
+			throws RebirthParseException {
 		if (sValue == null) {
 			return defaultValue;
 		}
@@ -248,7 +248,7 @@ public class ByteSizeValue implements Serializable, Streamable {
 				bytes = Long.parseLong(sValue);
 			}
 		} catch (NumberFormatException e) {
-			throw new RestartParseException("Failed to parse [" + sValue + "]", e);
+			throw new RebirthParseException("Failed to parse [" + sValue + "]", e);
 		}
 		return new ByteSizeValue(bytes, ByteSizeUnit.BYTES);
 	}
@@ -266,26 +266,17 @@ public class ByteSizeValue implements Serializable, Streamable {
 		return sizeValue;
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.Streamable#readFrom(cn.com.summall.search.commons.io.stream.StreamInput)
-	 */
 	@Override
 	public void readFrom(StreamInput in) throws IOException {
 		size = in.readVLong();
 		sizeUnit = ByteSizeUnit.BYTES;
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.io.stream.Streamable#writeTo(cn.com.summall.search.commons.io.stream.StreamOutput)
-	 */
 	@Override
 	public void writeTo(StreamOutput out) throws IOException {
 		out.writeVLong(bytes());
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons OS.java 2012-3-14 9:49:29 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons OS.java 2012-7-6 10:22:17 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -11,48 +11,62 @@ package cn.com.rebirth.commons.utils;
  */
 public enum OS {
 
-	/** The WINDOW s_ nt. */
+	/** The windows nt. */
 	WINDOWS_NT("Windows NT"),
+	
 	/** The WINDOW s_95. */
 	WINDOWS_95("Windows 95"),
+	
 	/** The WINDOW s_98. */
 	WINDOWS_98("Windows 98"),
+	
 	/** The WINDOW s_2000. */
 	WINDOWS_2000("Windows 2000"),
-	/** The WINDOW s_ vista. */
+	
+	/** The windows vista. */
 	WINDOWS_VISTA("Windows Vista"),
+	
 	/** The WINDOW s_7. */
 	WINDOWS_7("Windows 7"),
 	// add new windows versions here
-	/** The WINDOW s_ other. */
+	/** The windows other. */
 	WINDOWS_OTHER("Windows"),
 
-	/** The SOLARIS. */
-	SOLARIS("Solaris"), /** The LINUX. */
-	LINUX("Linux"), /** The H p_ ux. */
-	HP_UX("HP-UX"), /** The IB m_ aix. */
-	IBM_AIX("AIX"), /** The SG i_ irix. */
-	SGI_IRIX("Irix"), /** The SU n_ os. */
-	SUN_OS("SunOS"), /** The COMPA q_ tr u64_ unix. */
+	/** The solaris. */
+	SOLARIS("Solaris"), 
+ /** The linux. */
+	LINUX("Linux"), 
+ /** The hp ux. */
+	HP_UX("HP-UX"), 
+ /** The ibm aix. */
+	IBM_AIX("AIX"), 
+ /** The sgi irix. */
+	SGI_IRIX("Irix"), 
+ /** The sun os. */
+	SUN_OS("SunOS"), 
+ /** The COMPA q_ tr u64_ unix. */
 	COMPAQ_TRU64_UNIX("Digital UNIX"),
-	/** The MAC. */
+	
+	/** The mac. */
 	MAC("Mac OS X", "Darwin"),
-	/** The FREEBSD. */
+	
+	/** The freebsd. */
 	FREEBSD("freebsd"),
 	// add new unix versions here
 
 	/** The O s2. */
-	OS2("OS/2"), /** The COMPA q_ ope n_ vms. */
+	OS2("OS/2"), 
+ /** The compaq open vms. */
 	COMPAQ_OPEN_VMS("OpenVMS"),
 
-	/** Unrecognized OS. */
+	/** The other. */
 	OTHER("");
 
 	/** The names. */
 	private String names[];
 
 	/**
-	 * Instantiates a new oS.
+	 * Instantiates a new os.
 	 *
 	 * @param names the names
 	 */
@@ -63,7 +77,7 @@ public enum OS {
 	/**
 	 * Checks if is windows.
 	 *
-	 * @return true if this OS belongs to windows family
+	 * @return true, if is windows
 	 */
 	public boolean isWindows() {
 		return ordinal() <= WINDOWS_OTHER.ordinal();
@@ -72,7 +86,7 @@ public enum OS {
 	/**
 	 * Checks if is unix.
 	 *
-	 * @return true if this OS belongs to *nix family
+	 * @return true, if is unix
 	 */
 	public boolean isUnix() {
 		return ordinal() > WINDOWS_OTHER.ordinal() && ordinal() < OS2.ordinal();
@@ -83,8 +97,8 @@ public enum OS {
 	/**
 	 * Gets the.
 	 *
-	 * @param osName name of OS as returned by <code>System.getProperty("os.name")</code>
-	 * @return OS for the specified {@code osName}
+	 * @param osName the os name
+	 * @return the os
 	 */
 	public static OS get(String osName) {
 		osName = osName.toLowerCase();
@@ -103,7 +117,7 @@ public enum OS {
 	/**
 	 * Gets the.
 	 *
-	 * @return OS on which this JVM is running
+	 * @return the os
 	 */
 	public static OS get() {
 		if (current == null)

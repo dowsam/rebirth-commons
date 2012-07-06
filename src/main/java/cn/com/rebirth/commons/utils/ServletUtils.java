@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ServletUtils.java 2012-2-2 10:57:51 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ServletUtils.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -47,7 +47,7 @@ public abstract class ServletUtils {
 	public static final long ONE_YEAR_SECONDS = 60 * 60 * 24 * 365;
 
 	/**
-	 * 设置客户端缓存过期时间 Header.
+	 * Sets the expires header.
 	 *
 	 * @param response the response
 	 * @param expiresSeconds the expires seconds
@@ -60,7 +60,7 @@ public abstract class ServletUtils {
 	}
 
 	/**
-	 * 设置客户端无缓存Header.
+	 * Sets the no cache header.
 	 *
 	 * @param response the new no cache header
 	 */
@@ -73,7 +73,7 @@ public abstract class ServletUtils {
 	}
 
 	/**
-	 * 设置LastModified Header.
+	 * Sets the last modified header.
 	 *
 	 * @param response the response
 	 * @param lastModifiedDate the last modified date
@@ -83,7 +83,7 @@ public abstract class ServletUtils {
 	}
 
 	/**
-	 * 设置Etag Header.
+	 * Sets the etag.
 	 *
 	 * @param response the response
 	 * @param etag the etag
@@ -93,13 +93,11 @@ public abstract class ServletUtils {
 	}
 
 	/**
-	 * 根据浏览器If-Modified-Since Header, 计算文件是否已被修改.
-	 * 
-	 * 如果无修改, checkIfModify返回false ,设置304 not modify status.
+	 * Check if modified since.
 	 *
 	 * @param request the request
 	 * @param response the response
-	 * @param lastModified 内容的最后修改时间.
+	 * @param lastModified the last modified
 	 * @return true, if successful
 	 */
 	public static boolean checkIfModifiedSince(HttpServletRequest request, HttpServletResponse response,
@@ -113,13 +111,11 @@ public abstract class ServletUtils {
 	}
 
 	/**
-	 * 根据浏览器 If-None-Match Header, 计算Etag是否已无效.
-	 * 
-	 * 如果Etag有效, checkIfNoneMatch返回false, 设置304 not modify status.
+	 * Check if none match etag.
 	 *
 	 * @param request the request
 	 * @param response the response
-	 * @param etag 内容的ETag.
+	 * @param etag the etag
 	 * @return true, if successful
 	 */
 	public static boolean checkIfNoneMatchEtag(HttpServletRequest request, HttpServletResponse response, String etag) {
@@ -149,10 +145,10 @@ public abstract class ServletUtils {
 	}
 
 	/**
-	 * 设置让浏览器弹出下载对话框的Header.
+	 * Sets the file download header.
 	 *
 	 * @param response the response
-	 * @param fileName 下载后的文件名.
+	 * @param fileName the file name
 	 */
 	public static void setFileDownloadHeader(HttpServletResponse response, String fileName) {
 		try {
@@ -164,9 +160,7 @@ public abstract class ServletUtils {
 	}
 
 	/**
-	 * 取得带相同前缀的Request Parameters.
-	 * 
-	 * 返回的结果Parameter名已去除前缀.
+	 * Gets the parameters starting with.
 	 *
 	 * @param request the request
 	 * @param _prefix the _prefix
@@ -198,7 +192,7 @@ public abstract class ServletUtils {
 	}
 
 	/**
-	 * 对Http Basic验证的 Header进行编码.
+	 * Encode http basic.
 	 *
 	 * @param userName the user name
 	 * @param password the password

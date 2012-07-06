@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons StreamOutput.java 2012-3-29 15:15:09 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons StreamOutput.java 2012-7-6 10:22:16 l.xue.nong$$
  */
 
 
@@ -230,11 +230,11 @@ public abstract class StreamOutput extends OutputStream {
 	}
 
 	
-	/** The ZERO. */
+	/** The zero. */
 	private static byte ZERO = 0;
 
 	
-	/** The ONE. */
+	/** The one. */
 	private static byte ONE = 1;
 
 	

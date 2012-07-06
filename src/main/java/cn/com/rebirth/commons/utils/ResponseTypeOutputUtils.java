@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ResponseTypeOutputUtils.java 2012-2-2 10:57:57 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ResponseTypeOutputUtils.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -37,16 +37,12 @@ public abstract class ResponseTypeOutputUtils {
 
 	// -- 绕过jsp/freemaker直接输出文本的函数 --//
 	/**
-	 * 直接输出内容的简便函数.
-	 * 
-	 * eg. render("text/plain", "hello", "encoding:GBK"); render("text/plain",
-	 * "hello", "no-cache:false"); render("text/plain", "hello", "encoding:GBK",
-	 * "no-cache:false");
+	 * Render.
 	 *
 	 * @param contentType the content type
 	 * @param content the content
 	 * @param response the response
-	 * @param headers 可变的header数组，目前接受的值为"encoding:"或"no-cache:",默认值分别为UTF-8和true.
+	 * @param headers the headers
 	 */
 	public static void render(final String contentType, final String content, HttpServletResponse response,
 			final String... headers) {
@@ -60,60 +56,55 @@ public abstract class ResponseTypeOutputUtils {
 	}
 
 	/**
-	 * 直接输出文本.
+	 * Render text.
 	 *
 	 * @param response the response
 	 * @param text the text
 	 * @param headers the headers
-	 * @see #render(String, String, String...)
 	 */
 	public static void renderText(final HttpServletResponse response, final String text, final String... headers) {
 		render(ServletUtils.TEXT_TYPE, text, response, headers);
 	}
 
 	/**
-	 * 直接输出HTML.
+	 * Render html.
 	 *
 	 * @param response the response
 	 * @param html the html
 	 * @param headers the headers
-	 * @see #render(String, String, String...)
 	 */
 	public static void renderHtml(final HttpServletResponse response, final String html, final String... headers) {
 		render(ServletUtils.HTML_TYPE, html, response, headers);
 	}
 
 	/**
-	 * 直接输出XML.
+	 * Render xml.
 	 *
 	 * @param response the response
 	 * @param xml the xml
 	 * @param headers the headers
-	 * @see #render(String, String, String...)
 	 */
 	public static void renderXml(final HttpServletResponse response, final String xml, final String... headers) {
 		render(ServletUtils.XML_TYPE, xml, response, headers);
 	}
 
 	/**
-	 * 直接输出JSON.
+	 * Render json.
 	 *
 	 * @param response the response
-	 * @param jsonString json字符串.
+	 * @param jsonString the json string
 	 * @param headers the headers
-	 * @see #render(String, String, String...)
 	 */
 	public static void renderJson(final HttpServletResponse response, final String jsonString, final String... headers) {
 		render(ServletUtils.JSON_TYPE, jsonString, response, headers);
 	}
 
 	/**
-	 * 直接输出JSON,使用Jackson转换Java对象.
+	 * Render json.
 	 *
 	 * @param response the response
-	 * @param data 可以是List<POJO>, POJO[], POJO, 也可以Map名值对.
+	 * @param data the data
 	 * @param headers the headers
-	 * @see #render(String, String, String...)
 	 */
 	public static void renderJson(HttpServletResponse response, final Object data, final String... headers) {
 		response = initResponseHeader(ServletUtils.JSON_TYPE, response, headers);
@@ -125,11 +116,11 @@ public abstract class ResponseTypeOutputUtils {
 	}
 
 	/**
-	 * 直接输出支持跨域Mashup的JSONP.
+	 * Render jsonp.
 	 *
 	 * @param response the response
-	 * @param callbackName callback函数名.
-	 * @param object Java对象,可以是List<POJO>, POJO[], POJO ,也可以Map名值对, 将被转化为json字符串.
+	 * @param callbackName the callback name
+	 * @param object the object
 	 * @param headers the headers
 	 */
 	public static void renderJsonp(final HttpServletResponse response, final String callbackName, final Object object,
@@ -149,7 +140,7 @@ public abstract class ResponseTypeOutputUtils {
 	}
 
 	/**
-	 * 分析并设置contentType与headers.
+	 * Inits the response header.
 	 *
 	 * @param contentType the content type
 	 * @param response the response

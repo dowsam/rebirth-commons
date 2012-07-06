@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons AnalyzerType.java 2012-4-18 14:08:23 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons AnalyzerType.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.annotation;
 
@@ -12,127 +12,127 @@ package cn.com.rebirth.commons.search.annotation;
  */
 public enum AnalyzerType {
 
-	/** The INDONESIAN. */
+	/** The indonesian. */
 	INDONESIAN("indonesian", "org.apache.lucene.analysis.id.IndonesianAnalyzer"),
 
-	/** The ARABIC. */
+	/** The arabic. */
 	ARABIC("arabic", "org.apache.lucene.analysis.ar.ArabicAnalyzer"),
 
-	/** The STOP. */
+	/** The stop. */
 	STOP("stop", "org.apache.lucene.analysis.StopAnalyzer"),
 
-	/** The FINNISH. */
+	/** The finnish. */
 	FINNISH("finnish", "org.apache.lucene.analysis.fi.FinnishAnalyzer"),
 
-	/** The ITALIAN. */
+	/** The italian. */
 	ITALIAN("italian", "org.apache.lucene.analysis.it.ItalianAnalyzer"),
 
-	/** The PERSIAN. */
+	/** The persian. */
 	PERSIAN("persian", "org.apache.lucene.analysis.fa.PersianAnalyzer"),
 
-	/** The SIMPLE. */
+	/** The simple. */
 	SIMPLE("simple", "org.apache.lucene.analysis.SimpleAnalyzer"),
 
-	/** The THAI. */
+	/** The thai. */
 	THAI("thai", "org.apache.lucene.analysis.th.ThaiAnalyzer"),
 
-	/** The CATALAN. */
+	/** The catalan. */
 	CATALAN("catalan", "org.apache.lucene.analysis.ca.CatalanAnalyzer"),
 
-	/** The FRENCH. */
+	/** The french. */
 	FRENCH("french", "org.apache.lucene.analysis.fr.FrenchAnalyzer"),
 
-	/** The BRAZILIAN. */
+	/** The brazilian. */
 	BRAZILIAN("brazilian", "org.apache.lucene.analysis.br.BrazilianAnalyzer"),
 
-	/** The CHINESE. */
+	/** The chinese. */
 	CHINESE("chinese", "org.apache.lucene.analysis.cn.ChineseAnalyzer"),
 
-	/** The PORTUGUESE. */
+	/** The portuguese. */
 	PORTUGUESE("portuguese", "org.apache.lucene.analysis.pt.PortugueseAnalyzer"),
 
-	/** The DUTCH. */
+	/** The dutch. */
 	DUTCH("dutch", "org.apache.lucene.analysis.nl.DutchAnalyzer"),
 
-	/** The HINDI. */
+	/** The hindi. */
 	HINDI("hindi", "org.apache.lucene.analysis.hi.HindiAnalyzer"),
 
-	/** The CLASSIC. */
+	/** The classic. */
 	CLASSIC("classic", "org.apache.lucene.analysis.standard.ClassicAnalyzer"),
 
-	/** The SPANISH. */
+	/** The spanish. */
 	SPANISH("spanish", "org.apache.lucene.analysis.es.SpanishAnalyzer"),
 
-	/** The ARMENIAN. */
+	/** The armenian. */
 	ARMENIAN("armenian", "org.apache.lucene.analysis.hy.ArmenianAnalyzer"),
 
-	/** The STANDARD. */
+	/** The standard. */
 	STANDARD("standard", "org.apache.lucene.analysis.standard.StandardAnalyzer"),
 
-	/** The GREEK. */
+	/** The greek. */
 	GREEK("greek", "org.apache.lucene.analysis.el.GreekAnalyzer"),
 
-	/** The SWEDISH. */
+	/** The swedish. */
 	SWEDISH("swedish", "org.apache.lucene.analysis.sv.SwedishAnalyzer"),
 
-	/** The KEYWORD. */
+	/** The keyword. */
 	KEYWORD("keyword", "org.apache.lucene.analysis.KeywordAnalyzer"),
 
-	/** The GERMAN. */
+	/** The german. */
 	GERMAN("german", "org.apache.lucene.analysis.de.GermanAnalyzer"),
 
-	/** The ROMANIAN. */
+	/** The romanian. */
 	ROMANIAN("romanian", "org.apache.lucene.analysis.ro.RomanianAnalyzer"),
 
-	/** The SNOWBALL. */
+	/** The snowball. */
 	SNOWBALL("snowball", "org.apache.lucene.analysis.snowball.SnowballAnalyzer"),
 
-	/** The WHITESPACE. */
+	/** The whitespace. */
 	WHITESPACE("whitespace", "org.apache.lucene.analysis.WhitespaceAnalyzer"),
 
-	/** The STANDAR d_ htm l_ strip. */
-	STANDARD_HTML_STRIP("standard_html_strip", "cn.com.summall.search.core.index.analysis.StandardHtmlStripAnalyzer"),
+	/** The standard html strip. */
+	STANDARD_HTML_STRIP("standard_html_strip", "cn.com.rebirth.search.core.index.analysis.StandardHtmlStripAnalyzer"),
 
-	/** The CZECH. */
+	/** The czech. */
 	CZECH("czech", "org.apache.lucene.analysis.cz.CzechAnalyzer"),
 
-	/** The STANDARDHTMLSTRIP. */
-	STANDARDHTMLSTRIP("standard_html_strip", "cn.com.summall.search.core.index.analysis.StandardHtmlStripAnalyzer"),
+	/** The standardhtmlstrip. */
+	STANDARDHTMLSTRIP("standard_html_strip", "cn.com.rebirth.search.core.index.analysis.StandardHtmlStripAnalyzer"),
 
-	/** The TURKISH. */
+	/** The turkish. */
 	TURKISH("turkish", "org.apache.lucene.analysis.tr.TurkishAnalyzer"),
 
-	/** The HUNGARIAN. */
+	/** The hungarian. */
 	HUNGARIAN("hungarian", "org.apache.lucene.analysis.hu.HungarianAnalyzer"),
 
-	/** The GALICIAN. */
+	/** The galician. */
 	GALICIAN("galician", "org.apache.lucene.analysis.gl.GalicianAnalyzer"),
 
-	/** The CJK. */
+	/** The cjk. */
 	CJK("cjk", "org.apache.lucene.analysis.cjk.CJKAnalyzer"),
 
-	/** The DEFAULT. */
-	DEFAULT("default", "cn.com.summall.analyzer.support.SumMallAnalyzer"),
+	/** The default. */
+	DEFAULT("default", "cn.com.rebirth.analyzer.support.rebirthAnalyzer"),
 
-	/** The PATTERN. */
+	/** The pattern. */
 	PATTERN("pattern", "org.apache.lucene.analysis.miscellaneous.PatternAnalyzer"),
 
-	/** The NORWEGIAN. */
+	/** The norwegian. */
 	NORWEGIAN("norwegian", "org.apache.lucene.analysis.no.NorwegianAnalyzer"),
 
-	/** The RUSSIAN. */
+	/** The russian. */
 	RUSSIAN("russian", "org.apache.lucene.analysis.ru.RussianAnalyzer"),
 
-	/** The DANISH. */
+	/** The danish. */
 	DANISH("danish", "org.apache.lucene.analysis.da.DanishAnalyzer"),
 
-	/** The BASQUE. */
+	/** The basque. */
 	BASQUE("basque", "org.apache.lucene.analysis.eu.BasqueAnalyzer"),
 
-	/** The BULGARIAN. */
+	/** The bulgarian. */
 	BULGARIAN("bulgarian", "org.apache.lucene.analysis.bg.BulgarianAnalyzer"),
 
-	/** The ENGLISH. */
+	/** The english. */
 	ENGLISH("english", "org.apache.lucene.analysis.en.EnglishAnalyzer");
 
 	/** The name. */
@@ -155,7 +155,8 @@ public enum AnalyzerType {
 	/**
 	 * New analyzer.
 	 *
-	 * @return the analyzer
+	 * @param <T> the generic type
+	 * @return the t
 	 */
 	@SuppressWarnings("unchecked")
 	public <T> T newAnalyzer() {

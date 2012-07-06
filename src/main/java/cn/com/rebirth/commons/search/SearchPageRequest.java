@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons SearchPageRequest.java 2012-7-4 10:15:57 l.xue.nong$$
+ * Info:rebirth-commons SearchPageRequest.java 2012-7-6 10:22:17 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search;
 
@@ -17,6 +17,7 @@ public class SearchPageRequest extends PageRequest {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -2521900772005207084L;
+	
 	/** The similarity. */
 	protected Similarity similarity;
 

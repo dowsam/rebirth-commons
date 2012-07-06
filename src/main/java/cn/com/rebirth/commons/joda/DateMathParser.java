@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons DateMathParser.java 2012-3-29 15:15:08 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons DateMathParser.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.joda;
@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.joda.time.DateTimeZone;
 import org.joda.time.MutableDateTime;
 
-import cn.com.rebirth.commons.exception.RestartParseException;
+import cn.com.rebirth.commons.exception.RebirthParseException;
 
 
 
@@ -113,9 +113,9 @@ public class DateMathParser {
 	 * @param time the time
 	 * @param roundUp the round up
 	 * @return the long
-	 * @throws SumMallSearchParseException the sum mall search parse exception
+	 * @throws rebirthParseException the rebirth parse exception
 	 */
-	private long parseMath(String mathString, long time, boolean roundUp) throws RestartParseException {
+	private long parseMath(String mathString, long time, boolean roundUp) throws RebirthParseException {
 		MutableDateTime dateTime = new MutableDateTime(time, DateTimeZone.UTC);
 		try {
 			for (int i = 0; i < mathString.length();) {
@@ -128,7 +128,7 @@ public class DateMathParser {
 				} else if (c == '-') {
 					type = 2;
 				} else {
-					throw new RestartParseException("operator not supported for date math [" + mathString + "]");
+					throw new RebirthParseException("operator not supported for date math [" + mathString + "]");
 				}
 
 				int num;
@@ -144,7 +144,7 @@ public class DateMathParser {
 				if (type == 0) {
 					
 					if (num != 1) {
-						throw new RestartParseException("rounding `/` can only be used on single unit types ["
+						throw new RebirthParseException("rounding `/` can only be used on single unit types ["
 								+ mathString + "]");
 					}
 				}
@@ -230,15 +230,15 @@ public class DateMathParser {
 					}
 					break;
 				default:
-					throw new RestartParseException("unit [" + unit + "] not supported for date math ["
+					throw new RebirthParseException("unit [" + unit + "] not supported for date math ["
 							+ mathString + "]");
 				}
 			}
 		} catch (Exception e) {
-			if (e instanceof RestartParseException) {
-				throw (RestartParseException) e;
+			if (e instanceof RebirthParseException) {
+				throw (RebirthParseException) e;
 			}
-			throw new RestartParseException("failed to parse date math [" + mathString + "]");
+			throw new RebirthParseException("failed to parse date math [" + mathString + "]");
 		}
 		return dateTime.getMillis();
 	}
@@ -258,7 +258,7 @@ public class DateMathParser {
 				long time = Long.parseLong(value);
 				return timeUnit.toMillis(time);
 			} catch (NumberFormatException e1) {
-				throw new RestartParseException("failed to parse date field [" + value
+				throw new RebirthParseException("failed to parse date field [" + value
 						+ "], tried both date format [" + dateTimeFormatter.format() + "], and timestamp number", e);
 			}
 		}
@@ -286,7 +286,7 @@ public class DateMathParser {
 					long time = Long.parseLong(value);
 					return timeUnit.toMillis(time);
 				} catch (NumberFormatException e1) {
-					throw new RestartParseException("failed to parse date field [" + value
+					throw new RebirthParseException("failed to parse date field [" + value
 							+ "], tried both date format [" + dateTimeFormatter.format() + "], and timestamp number");
 				}
 			}
@@ -296,7 +296,7 @@ public class DateMathParser {
 				long time = Long.parseLong(value);
 				return timeUnit.toMillis(time);
 			} catch (NumberFormatException e1) {
-				throw new RestartParseException("failed to parse date field [" + value
+				throw new RebirthParseException("failed to parse date field [" + value
 						+ "], tried both date format [" + dateTimeFormatter.format() + "], and timestamp number", e);
 			}
 		}

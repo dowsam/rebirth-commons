@@ -1,13 +1,13 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons DistanceUnit.java 2012-3-29 15:15:12 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons DistanceUnit.java 2012-7-6 10:22:16 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.unit;
 
 import java.io.IOException;
 
-import cn.com.rebirth.commons.exception.RestartIllegalArgumentException;
+import cn.com.rebirth.commons.exception.RebirthIllegalArgumentException;
 import cn.com.rebirth.commons.io.stream.StreamInput;
 import cn.com.rebirth.commons.io.stream.StreamOutput;
 
@@ -18,7 +18,7 @@ import cn.com.rebirth.commons.io.stream.StreamOutput;
  */
 public enum DistanceUnit {
 
-	/** The MILES. */
+	/** The miles. */
 	MILES(3959, 24902) {
 		@Override
 		public String toString() {
@@ -41,7 +41,7 @@ public enum DistanceUnit {
 		}
 	},
 
-	/** The KILOMETERS. */
+	/** The kilometers. */
 	KILOMETERS(6371, 40076) {
 		@Override
 		public String toString() {
@@ -207,7 +207,7 @@ public enum DistanceUnit {
 		} else if ("miles".equals(unit)) {
 			return MILES;
 		}
-		throw new RestartIllegalArgumentException("No distance unit match [" + unit + "]");
+		throw new RebirthIllegalArgumentException("No distance unit match [" + unit + "]");
 	}
 
 	/**
@@ -239,7 +239,7 @@ public enum DistanceUnit {
 		} else if (b == 1) {
 			return KILOMETERS;
 		} else {
-			throw new RestartIllegalArgumentException("No type for distance unit matching [" + b + "]");
+			throw new RebirthIllegalArgumentException("No type for distance unit matching [" + b + "]");
 		}
 	}
 }

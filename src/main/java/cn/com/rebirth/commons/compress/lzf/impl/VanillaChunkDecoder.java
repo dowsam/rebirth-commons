@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons VanillaChunkDecoder.java 2012-3-29 15:15:18 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons VanillaChunkDecoder.java 2012-7-6 10:35:20 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.compress.lzf.impl;
@@ -28,7 +28,7 @@ public class VanillaChunkDecoder extends ChunkDecoder {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.compress.lzf.ChunkDecoder#decodeChunk(java.io.InputStream, byte[], byte[])
+	 * @see cn.com.rebirth.commons.compress.lzf.ChunkDecoder#decodeChunk(java.io.InputStream, byte[], byte[])
 	 */
 	@Override
 	public final int decodeChunk(final InputStream is, final byte[] inputBuffer, final byte[] outputBuffer)
@@ -59,7 +59,7 @@ public class VanillaChunkDecoder extends ChunkDecoder {
 
 	
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.commons.compress.lzf.ChunkDecoder#decodeChunk(byte[], int, byte[], int, int)
+	 * @see cn.com.rebirth.commons.compress.lzf.ChunkDecoder#decodeChunk(byte[], int, byte[], int, int)
 	 */
 	@Override
 	public final void decodeChunk(byte[] in, int inPos, byte[] out, int outPos, int outEnd) throws IOException {

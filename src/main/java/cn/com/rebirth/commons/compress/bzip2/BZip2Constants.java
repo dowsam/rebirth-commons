@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons BZip2Constants.java 2012-3-29 15:15:16 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons BZip2Constants.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.compress.bzip2;
@@ -18,39 +18,39 @@ public interface BZip2Constants {
 	int baseBlockSize = 100000;
 	
 	
-	/** The MA x_ alph a_ size. */
+	/** The max alpha size. */
 	int MAX_ALPHA_SIZE = 258;
 	
 	
-	/** The MA x_ cod e_ len. */
+	/** The max code len. */
 	int MAX_CODE_LEN = 23;
 	
 	
-	/** The RUNA. */
+	/** The runa. */
 	int RUNA = 0;
 	
 	
-	/** The RUNB. */
+	/** The runb. */
 	int RUNB = 1;
 	
 	
-	/** The N_ groups. */
+	/** The n groups. */
 	int N_GROUPS = 6;
 	
 	
-	/** The G_ size. */
+	/** The g size. */
 	int G_SIZE = 50;
 	
 	
-	/** The N_ iters. */
+	/** The n iters. */
 	int N_ITERS = 4;
 	
 	
-	/** The MA x_ selectors. */
+	/** The max selectors. */
 	int MAX_SELECTORS = (2 + (900000 / G_SIZE));
 	
 	
-	/** The NU m_ overshoo t_ bytes. */
+	/** The num overshoot bytes. */
 	int NUM_OVERSHOOT_BYTES = 20;
 
 	

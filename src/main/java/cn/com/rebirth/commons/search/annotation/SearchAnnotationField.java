@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons SearchAnnotationField.java 2012-2-16 17:43:41 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons SearchAnnotationField.java 2012-7-6 10:40:50 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.annotation;
 
@@ -17,13 +17,13 @@ import java.lang.reflect.Method;
  * @author l.xue.nong
  */
 public class SearchAnnotationField extends AbstractSearchProperty {
-	
+
 	/** The field. */
 	private final Field field;
-	
+
 	/** The getter. */
 	private Method getter = null;
-	
+
 	/** The setter. */
 	private Method setter = null;
 
@@ -52,7 +52,7 @@ public class SearchAnnotationField extends AbstractSearchProperty {
 	}
 
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.client.AbstractSearchProperty#getGetter()
+	 * @see cn.com.rebirth.commons.search.annotation.AbstractSearchProperty#getGetter()
 	 */
 	@Override
 	public Method getGetter() {
@@ -60,7 +60,7 @@ public class SearchAnnotationField extends AbstractSearchProperty {
 	}
 
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.client.AbstractSearchProperty#getSetter()
+	 * @see cn.com.rebirth.commons.search.annotation.AbstractSearchProperty#getSetter()
 	 */
 	@Override
 	public Method getSetter() {
@@ -68,7 +68,7 @@ public class SearchAnnotationField extends AbstractSearchProperty {
 	}
 
 	/* (non-Javadoc)
-	 * @see cn.com.summall.search.client.AbstractSearchProperty#getFieldName()
+	 * @see cn.com.rebirth.commons.search.annotation.AbstractSearchProperty#getFieldName()
 	 */
 	@Override
 	public String getFieldName() {

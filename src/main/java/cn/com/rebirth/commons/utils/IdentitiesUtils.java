@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons IdentitiesUtils.java 2012-7-4 10:44:30 l.xue.nong$$
+ * Info:rebirth-commons IdentitiesUtils.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -18,7 +18,7 @@ public abstract class IdentitiesUtils {
 	private static SecureRandom random = new SecureRandom();
 
 	/**
-	 * 封装JDK自带的UUID, 通过Random数字生成,中间有-分割.
+	 * Uuid.
 	 *
 	 * @return the string
 	 */
@@ -27,7 +27,7 @@ public abstract class IdentitiesUtils {
 	}
 
 	/**
-	 * 封装JDK自带的UUID, 通过Random数字生成,中间无-分割.
+	 * Uuid2.
 	 *
 	 * @return the string
 	 */
@@ -36,7 +36,7 @@ public abstract class IdentitiesUtils {
 	}
 
 	/**
-	 * 使用SecureRandom随机生成Long.
+	 * Random long.
 	 *
 	 * @return the long
 	 */
@@ -45,7 +45,7 @@ public abstract class IdentitiesUtils {
 	}
 
 	/**
-	 * 基于Base62编码的随机生成Long.
+	 * Random base62.
 	 *
 	 * @return the string
 	 */

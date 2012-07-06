@@ -1,18 +1,19 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons Constants.java 2012-7-4 9:36:52 l.xue.nong$$
+ * Info:rebirth-commons Constants.java 2012-7-6 10:22:17 l.xue.nong$$
  */
 package cn.com.rebirth.commons;
 
 /**
- * 定义一些公用的常量
+ * The Interface Constants.
  *
  * @author l.xue.nong
  */
 public interface Constants {
-	/** 定义项目的全量包名 */
-	public static final String PACKAGE_NAME_FIX = "cn.com.restart";
+	
+	/** The Constant PACKAGE_NAME_FIX. */
+	public static final String PACKAGE_NAME_FIX = "cn.com.rebirth";
 
-	/** 定义项目默认的配置文件名 */
+	/** The Constant DEFAULT_APP_PROPERTIES. */
 	public static final String DEFAULT_APP_PROPERTIES = "classpath:/application.properties";
 }

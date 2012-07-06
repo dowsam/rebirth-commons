@@ -1,21 +1,21 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons RestartCommonsVersion.java 2012-7-4 9:44:33 l.xue.nong$$
+ * Info:rebirth-commons rebirthCommonsVersion.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons;
 
 /**
- * 公用模块的版本实现.
+ * The Class rebirthCommonsVersion.
  *
  * @author l.xue.nong
  */
-public final class RestartCommonsVersion implements Version {
+public final class RebirthCommonsVersion implements Version {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -367283822037017652L;
 
 	/* (non-Javadoc)
-	 * @see cn.com.restart.commons.Version#getModuleVersion()
+	 * @see cn.com.rebirth.commons.Version#getModuleVersion()
 	 */
 	@Override
 	public String getModuleVersion() {
@@ -23,11 +23,11 @@ public final class RestartCommonsVersion implements Version {
 	}
 
 	/* (non-Javadoc)
-	 * @see cn.com.restart.commons.Version#getModuleName()
+	 * @see cn.com.rebirth.commons.Version#getModuleName()
 	 */
 	@Override
 	public String getModuleName() {
-		return "restart-commons";
+		return "rebirth-commons";
 	}
 
 }

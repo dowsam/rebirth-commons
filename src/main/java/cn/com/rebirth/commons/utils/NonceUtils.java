@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons NonceUtils.java 2012-2-2 10:54:11 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons NonceUtils.java 2012-7-6 10:22:15 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -35,9 +35,9 @@ public abstract class NonceUtils {
 
 	//-- Random function --//
 	/**
-	 * 使用较低强度的java.util.Random(),生成含所有字母与数字的字符串.
+	 * Random string.
 	 *
-	 * @param length 返回字符串长度
+	 * @param length the length
 	 * @return the string
 	 */
 	public static String randomString(int length) {
@@ -45,7 +45,7 @@ public abstract class NonceUtils {
 	}
 
 	/**
-	 * 使用SecureRandom生成Integer.
+	 * Random int.
 	 *
 	 * @return the int
 	 */
@@ -54,7 +54,7 @@ public abstract class NonceUtils {
 	}
 
 	/**
-	 * 使用SecureRandom生成Integer,返回长度不大于8的Hex编码结果.
+	 * Random hex int.
 	 *
 	 * @return the string
 	 */
@@ -63,7 +63,7 @@ public abstract class NonceUtils {
 	}
 
 	/**
-	 * 使用SecureRandom生成Long.
+	 * Random long.
 	 *
 	 * @return the long
 	 */
@@ -72,7 +72,7 @@ public abstract class NonceUtils {
 	}
 
 	/**
-	 * 使用SecureRandom生成Long, 返回长度不大于16的Hex编码结果.
+	 * Random hex long.
 	 *
 	 * @return the string
 	 */
@@ -81,7 +81,7 @@ public abstract class NonceUtils {
 	}
 
 	/**
-	 * 使用SecureRandom生成32字符,每8位带-的UUID,见rfc4122.
+	 * Random uuid.
 	 *
 	 * @return the string
 	 */
@@ -91,9 +91,7 @@ public abstract class NonceUtils {
 
 	//-- Timestamp function --//
 	/**
-	 * 返回Internate标准格式的当前毫秒级时间戳字符串.
-	 * 
-	 * 标准格式为yyyy-MM-dd'T'HH:mm:ss.SSS'Z', 如2009-10-15T14:24:50.316Z.
+	 * Current timestamp.
 	 *
 	 * @return the string
 	 */
@@ -103,7 +101,7 @@ public abstract class NonceUtils {
 	}
 
 	/**
-	 * 返回当前距离1970年的毫秒数.
+	 * Current mills.
 	 *
 	 * @return the long
 	 */
@@ -112,7 +110,7 @@ public abstract class NonceUtils {
 	}
 
 	/**
-	 * 返回当前距离1970年的毫秒数, 返回Hex编码的结果.
+	 * Current hex mills.
 	 *
 	 * @return the string
 	 */
@@ -122,7 +120,7 @@ public abstract class NonceUtils {
 
 	//-- Helper function --//
 	/**
-	 * 返回Hex编码的同一毫秒内的Counter.
+	 * Gets the counter.
 	 *
 	 * @return the counter
 	 */
@@ -140,7 +138,7 @@ public abstract class NonceUtils {
 
 	//-- Helper function --//
 	/**
-	 * 格式化字符串, 固定字符串长度, 不足长度在前面补0.
+	 * Format.
 	 *
 	 * @param source the source
 	 * @param length the length

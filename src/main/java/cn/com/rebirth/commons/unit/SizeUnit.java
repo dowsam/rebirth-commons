@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons SizeUnit.java 2012-3-29 15:15:08 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons SizeUnit.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 
 
@@ -15,7 +15,7 @@ package cn.com.rebirth.commons.unit;
 public enum SizeUnit {
 	
 	
-	/** The SINGLE. */
+	/** The single. */
 	SINGLE {
 		@Override
 		public long toSingles(long size) {
@@ -39,7 +39,7 @@ public enum SizeUnit {
 	},
 	
 	
-	/** The KILO. */
+	/** The kilo. */
 	KILO {
 		@Override
 		public long toSingles(long size) {
@@ -63,7 +63,7 @@ public enum SizeUnit {
 	},
 	
 	
-	/** The MEGA. */
+	/** The mega. */
 	MEGA {
 		@Override
 		public long toSingles(long size) {
@@ -87,7 +87,7 @@ public enum SizeUnit {
 	},
 	
 	
-	/** The GIGA. */
+	/** The giga. */
 	GIGA {
 		@Override
 		public long toSingles(long size) {

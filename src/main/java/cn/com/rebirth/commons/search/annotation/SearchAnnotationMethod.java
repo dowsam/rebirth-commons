@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-client SearchAnnotationMethod.java 2012-2-16 15:12:55 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons SearchAnnotationMethod.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.annotation;
 
@@ -40,25 +40,16 @@ public class SearchAnnotationMethod extends AbstractSearchProperty {
 		this.setter.setAccessible(true);
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.client.AbstractSearchProperty#getGetter()
-	 */
 	@Override
 	public Method getGetter() {
 		return getter;
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.client.AbstractSearchProperty#getSetter()
-	 */
 	@Override
 	public Method getSetter() {
 		return setter;
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.com.summall.search.client.AbstractSearchProperty#getFieldName()
-	 */
 	@Override
 	public String getFieldName() {
 		return StringUtils.uncapitalize(getGetter().getName().replaceFirst("get", ""));

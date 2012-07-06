@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-search-commons ThreadNameDeterminer.java 2012-3-29 15:15:07 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ThreadNameDeterminer.java 2012-7-6 10:22:12 l.xue.nong$$
  */
 
 package cn.com.rebirth.commons.thread;
@@ -14,7 +14,7 @@ package cn.com.rebirth.commons.thread;
 public interface ThreadNameDeterminer {
 
 	
-	/** The PROPOSED. */
+	/** The proposed. */
 	ThreadNameDeterminer PROPOSED = new ThreadNameDeterminer() {
 		public String determineThreadName(String currentThreadName, String proposedThreadName) throws Exception {
 			return proposedThreadName;
@@ -22,7 +22,7 @@ public interface ThreadNameDeterminer {
 	};
 
 	
-	/** The CURRENT. */
+	/** The current. */
 	ThreadNameDeterminer CURRENT = new ThreadNameDeterminer() {
 		public String determineThreadName(String currentThreadName, String proposedThreadName) throws Exception {
 			return null;

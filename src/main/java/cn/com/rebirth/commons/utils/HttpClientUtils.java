@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons HttpClientUtils.java 2012-3-13 14:41:12 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons HttpClientUtils.java 2012-7-6 10:22:17 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -240,9 +240,6 @@ public class HttpClientUtils {
 			this.fileName = fileName;
 		}
 
-		/* (non-Javadoc)
-		 * @see cn.com.summall.commons.utils.HttpClientUtils.InvokeCallable#call(org.apache.http.client.HttpClient)
-		 */
 		@Override
 		public HttpEntity call(HttpClient httpClient) {
 			httpClient.getParams().setParameter(CoreProtocolPNames.PROTOCOL_VERSION, HttpVersion.HTTP_1_1);
@@ -334,9 +331,6 @@ public class HttpClientUtils {
 			this.targetUrl = targetUrl;
 		}
 
-		/* (non-Javadoc)
-		 * @see cn.com.summall.commons.utils.HttpClientUtils.InvokeCallable#call(org.apache.http.client.HttpClient)
-		 */
 		@Override
 		public HttpEntity call(HttpClient httpClient) {
 			HttpGet httpGet = new HttpGet(targetUrl);

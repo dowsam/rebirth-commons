@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons FieldIndex.java 2012-2-16 14:26:33 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons FieldIndex.java 2012-7-6 10:22:12 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.annotation;
 
@@ -18,16 +18,16 @@ import java.lang.annotation.Target;
 @Target(value = { ElementType.FIELD, ElementType.METHOD })
 public @interface FieldIndex {
 
-	/** 不索引. */
+	/** The Constant NO_INDEX. */
 	public static final String NO_INDEX = "NO";
 
-	/** 索引不分词. */
+	/** The Constant NOT_ANALYZED. */
 	public static final String NOT_ANALYZED = "NOT_ANALYZED";
 
 	/** The Constant NO_ANALYZED. */
 	public static final String NO_ANALYZED = "NO_ANALYZED";
 
-	/** 索引且分词. */
+	/** The Constant ANALYZED. */
 	public static final String ANALYZED = "ANALYZED";
 
 	/** The Constant FIELD. */
@@ -37,12 +37,7 @@ public @interface FieldIndex {
 	public static final String NUMERICFIELD = "numericField";
 
 	/**
-	 * lucene document field 索引属性
-	 * 默认值 ： "NOT_ANALYZED" ： 索引不分词
-	 * 字符型枚举值：
-	 * ”NO" : 不索引
-	 * "NOT_ANALYZED" ： 索引不分词
-	 * "ANALYZED" ： 索引且分词.
+	 * Value.
 	 *
 	 * @return the string
 	 */

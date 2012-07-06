@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons FieldBoost.java 2012-2-16 17:51:19 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons FieldBoost.java 2012-7-6 10:22:12 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.annotation;
 

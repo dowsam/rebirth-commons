@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons HttpRequestUtils.java 2012-2-2 10:50:25 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons HttpRequestUtils.java 2012-7-6 10:22:13 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public abstract class HttpRequestUtils {
 	
-	/** The NULLSTRING. */
+	/** The nullstring. */
 	private static String NULLSTRING = "";
 
 	/** The Constant DEFAULT_ENCODING. */
@@ -24,7 +24,7 @@ public abstract class HttpRequestUtils {
 	public static final String TARGET_ENCODING = "UTF-8";
 
 	/**
-	 * 对HTTP接收的参数进行编码转换.
+	 * Gets the encoded parameter.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -63,7 +63,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 取得HTTP参数，值为空字符串时返加null.
+	 * Gets the parameter.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -74,7 +74,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 取得HTTP参数，值为空字符串或null时返回默认值.
+	 * Gets the parameter.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -86,7 +86,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 对HTTP接收的参数数组进行编码转换.
+	 * Gets the encoded parameters.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -115,7 +115,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 对HTTP接收的参数数组进行编码转换.
+	 * Gets the parameters.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -126,7 +126,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 值为"trur"或'y"时返回true，否则返回false.
+	 * Gets the boolean parameter.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -145,7 +145,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 把取得的参数传化为int类型.
+	 * Gets the int parameter.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -166,7 +166,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 把取得的参数传化为float类型.
+	 * Gets the float parameter.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -187,7 +187,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 把取得的参数传化为double类型.
+	 * Gets the double parameter.
 	 *
 	 * @param request the request
 	 * @param name the name
@@ -208,7 +208,7 @@ public abstract class HttpRequestUtils {
 	}
 
 	/**
-	 * 把取得的参数传化为long类型.
+	 * Gets the long parameter.
 	 *
 	 * @param request the request
 	 * @param name the name

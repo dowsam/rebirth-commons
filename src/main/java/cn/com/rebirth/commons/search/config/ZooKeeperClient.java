@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2005-2012 www.summall.com.cn All rights reserved
- * Info:summall-commons ZooKeeperClient.java 2012-3-12 15:07:22 l.xue.nong$$
+ * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
+ * Info:rebirth-commons ZooKeeperClient.java 2012-7-6 10:22:16 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.config;
 
@@ -12,6 +12,7 @@ import java.util.List;
  * @author l.xue.nong
  */
 public interface ZooKeeperClient {
+	
 	/**
 	 * Creates the.
 	 *
@@ -32,8 +33,9 @@ public interface ZooKeeperClient {
 	/**
 	 * Gets the.
 	 *
+	 * @param <T> the generic type
 	 * @param path the path
-	 * @return the byte[]
+	 * @return the t
 	 */
 	public <T> T get(String path);
 

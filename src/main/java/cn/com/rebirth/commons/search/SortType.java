@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons SortType.java 2012-7-4 10:11:32 l.xue.nong$$
+ * Info:rebirth-commons SortType.java 2012-7-6 10:22:17 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search;
 
@@ -12,23 +12,32 @@ import org.apache.lucene.search.SortField;
  * @author l.xue.nong
  */
 public enum SortType {
-	/** The DOC. */
+	
+	/** The doc. */
 	DOC(SortField.DOC),
-	/** The SCORE. */
+	
+	/** The score. */
 	SCORE(SortField.SCORE),
-	/** The BYTE. */
+	
+	/** The byte. */
 	BYTE(SortField.BYTE),
-	/** The SHORT. */
+	
+	/** The short. */
 	SHORT(SortField.SHORT),
-	/** The INT. */
+	
+	/** The int. */
 	INT(SortField.INT),
-	/** The LONG. */
+	
+	/** The long. */
 	LONG(SortField.LONG),
-	/** The FLOAT. */
+	
+	/** The float. */
 	FLOAT(SortField.FLOAT),
-	/** The DOUBLE. */
+	
+	/** The double. */
 	DOUBLE(SortField.DOUBLE),
-	/** The STRING. */
+	
+	/** The string. */
 	STRING(SortField.STRING);
 
 	/** The value. */

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:restart-commons PageRequest.java 2012-7-4 9:49:27 l.xue.nong$$
+ * Info:rebirth-commons PageRequest.java 2012-7-6 10:22:14 l.xue.nong$$
  */
 package cn.com.rebirth.commons;
 
@@ -16,26 +16,27 @@ import org.apache.commons.lang3.StringUtils;
 import com.google.common.collect.Lists;
 
 /**
- * 分页的请求.
+ * The Class PageRequest.
  *
  * @author l.xue.nong
  */
 public class PageRequest implements Serializable {
 
 	/**
-	 * 排序的方式.
+	 * The Enum Direction.
 	 *
 	 * @author l.xue.nong
 	 */
 	public static enum Direction {
 
-		/** 升序. */
+		/** The asc. */
 		ASC,
-		/** 降序. */
+		
+		/** The desc. */
 		DESC;
 
 		/**
-		 * 字符串解析成对象.
+		 * From string.
 		 *
 		 * @param value the value
 		 * @return the direction
@@ -52,7 +53,7 @@ public class PageRequest implements Serializable {
 	}
 
 	/**
-	 * 属性排序的对象.
+	 * The Class Order.
 	 *
 	 * @author l.xue.nong
 	 */
@@ -60,6 +61,7 @@ public class PageRequest implements Serializable {
 
 		/** The Constant serialVersionUID. */
 		private static final long serialVersionUID = 7939310426624426548L;
+		
 		/** The direction. */
 		protected Direction direction;
 
