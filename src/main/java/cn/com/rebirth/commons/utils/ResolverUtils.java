@@ -8,11 +8,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
+import java.util.StringTokenizer;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
@@ -29,10 +34,10 @@ public class ResolverUtils<T> {
 
 	/** The logger. */
 	private static Logger logger = LoggerFactory.getLogger(ResolverUtils.class);
-	
+
 	/** The matches. */
 	private Set<Class<? extends T>> matches = new HashSet<Class<? extends T>>();
-	
+
 	/** The classloader. */
 	private ClassLoader classloader;
 
@@ -126,6 +131,43 @@ public class ResolverUtils<T> {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
+	public static List<URL> findClassPaths() {
+		List<URL> list = new ArrayList<URL>();
+		String classpath = System.getProperty("java.class.path");
+		StringTokenizer tokenizer = new StringTokenizer(classpath, File.pathSeparator);
+
+		while (tokenizer.hasMoreTokens()) {
+			String path = tokenizer.nextToken();
+			File fp = new File(path);
+			if (!fp.exists())
+				throw new RuntimeException("File in java.class.path does not exist: " + fp);
+			try {
+				list.add(fp.toURL());
+			} catch (MalformedURLException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return list;
+	}
+
+	public static Enumeration<URL> findClassPathsToEn() {
+		List<URL> urls = findClassPaths();
+		final Iterator<URL> iterator = urls.iterator();
+		return new Enumeration<URL>() {
+
+			@Override
+			public boolean hasMoreElements() {
+				return iterator.hasNext();
+			}
+
+			@Override
+			public URL nextElement() {
+				return iterator.next();
+			}
+		};
+	}
+
 	/**
 	 * Find in package.
 	 *
@@ -142,6 +184,10 @@ public class ResolverUtils<T> {
 		} catch (IOException ioe) {
 			logger.warn("Could not read package: " + packageName, ioe);
 			return;
+		}
+
+		if (!urls.hasMoreElements()) {
+			urls = findClassPathsToEn();
 		}
 
 		while (urls.hasMoreElements()) {
@@ -230,6 +276,7 @@ public class ResolverUtils<T> {
 	@SuppressWarnings("unchecked")
 	protected void addIfMatching(Matche matche, String fqn) {
 		try {
+			fqn = delBegin(fqn);
 			String externalName = fqn.substring(0, fqn.indexOf('.')).replace('/', '.');
 			ClassLoader loader = getClassLoader();
 			if (logger.isDebugEnabled()) {
@@ -244,6 +291,18 @@ public class ResolverUtils<T> {
 			logger.warn("Could not examine class '" + fqn + "' due to a " + t.getClass().getName() + " with message: "
 					+ t.getMessage());
 		}
+	}
+
+	private String delBegin(String fqn) {
+		String _fqn = fqn;
+		try {
+			while (_fqn.startsWith("/")) {
+				_fqn = _fqn.substring(_fqn.indexOf("/") + 1, _fqn.length());
+			}
+		} catch (Exception e) {
+			return fqn;
+		}
+		return _fqn;
 	}
 
 	/**
@@ -299,7 +358,7 @@ public class ResolverUtils<T> {
 	 * @author l.xue.nong
 	 */
 	public static class NameEndsWith implements Matche {
-		
+
 		/** The suffix. */
 		private String suffix;
 
@@ -332,7 +391,7 @@ public class ResolverUtils<T> {
 	 * @author l.xue.nong
 	 */
 	public static class AnnotatedWith implements Matche {
-		
+
 		/** The annotation. */
 		private Class<? extends Annotation> annotation;
 
