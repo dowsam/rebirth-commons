@@ -14,12 +14,12 @@ import org.apache.commons.lang3.StringUtils;
  * @author l.xue.nong
  */
 public class SearchAnnotationMethod extends AbstractSearchProperty {
-	
+
 	/** The getter. */
 	private final Method getter;
-	
+
 	/** The setter. */
-	private final Method setter;
+	private Method setter;
 
 	/**
 	 * Instantiates a new search annotation method.
@@ -31,27 +31,44 @@ public class SearchAnnotationMethod extends AbstractSearchProperty {
 		this.getter = method;
 		this.getter.setAccessible(true);
 		String setterName = getter.getName().replaceFirst("get", "set");
+		if (getter.getName().startsWith("is")
+				&& (Boolean.class.isAssignableFrom(getter.getReturnType()) || boolean.class.isAssignableFrom(getter
+						.getReturnType()))) {
+			setterName = getter.getName().replaceFirst("is", "set");
+		}
 		try {
 			this.setter = method.getDeclaringClass().getDeclaredMethod(setterName, getter.getReturnType());
+			this.setter.setAccessible(true);
 		} catch (NoSuchMethodException e) {
-			throw new IllegalStateException("No setter found for method provided: " + getter.getName() + " in class: "
+			logger.error("No setter found for method provided: " + getter.getName() + " in class: "
 					+ method.getDeclaringClass().getName());
 		}
-		this.setter.setAccessible(true);
 	}
 
+	/* (non-Javadoc)
+	 * @see cn.com.rebirth.commons.search.annotation.AbstractSearchProperty#getGetter()
+	 */
 	@Override
 	public Method getGetter() {
 		return getter;
 	}
 
+	/* (non-Javadoc)
+	 * @see cn.com.rebirth.commons.search.annotation.AbstractSearchProperty#getSetter()
+	 */
 	@Override
 	public Method getSetter() {
 		return setter;
 	}
 
+	/* (non-Javadoc)
+	 * @see cn.com.rebirth.commons.search.annotation.AbstractSearchProperty#getFieldName()
+	 */
 	@Override
 	public String getFieldName() {
+		if (getGetter().getName().startsWith("is")) {
+			return StringUtils.uncapitalize(getGetter().getName().replaceFirst("is", ""));
+		}
 		return StringUtils.uncapitalize(getGetter().getName().replaceFirst("get", ""));
 	}
 

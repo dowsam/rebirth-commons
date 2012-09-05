@@ -10,7 +10,7 @@ package cn.com.rebirth.commons;
  * @author l.xue.nong
  */
 public interface WsConstants extends Constants {
-	
+
 	/** The Constant CHARSET. */
 	public static final String CHARSET = ";charset=UTF-8";
 }

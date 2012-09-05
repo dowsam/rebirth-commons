@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
  * @author l.xue.nong
  */
 public interface FormatConstants extends Constants {
-	
+
 	/** The Constant DATE_FORMAT. */
 	public static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd", java.util.Locale.CHINA);
 

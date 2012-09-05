@@ -5,7 +5,6 @@
 
 package cn.com.rebirth.commons;
 
-
 /**
  * The Class Booleans.
  *
@@ -13,7 +12,6 @@ package cn.com.rebirth.commons;
  */
 public class Booleans {
 
-	
 	/**
 	 * Parses the boolean.
 	 *
@@ -43,7 +41,6 @@ public class Booleans {
 		return true;
 	}
 
-	
 	/**
 	 * Parses the boolean.
 	 *
@@ -58,7 +55,6 @@ public class Booleans {
 		return !(value.equals("false") || value.equals("0") || value.equals("off") || value.equals("no"));
 	}
 
-	
 	/**
 	 * Parses the boolean.
 	 *

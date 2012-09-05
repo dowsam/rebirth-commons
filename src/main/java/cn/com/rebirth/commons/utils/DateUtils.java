@@ -20,8 +20,8 @@ import cn.com.rebirth.commons.FormatConstants;
  *
  * @author l.xue.nong
  */
-public abstract class DateUtils extends org.apache.commons.lang.time.DateUtils {
-	
+public abstract class DateUtils extends org.apache.commons.lang3.time.DateUtils {
+
 	/**
 	 * Gets the current date time.
 	 *

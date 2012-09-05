@@ -9,18 +9,10 @@ package cn.com.rebirth.commons;
  *
  * @author l.xue.nong
  */
-public final class RebirthCommonsVersion implements Version {
+public final class RebirthCommonsVersion extends AbstractVersion implements Version {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -367283822037017652L;
-
-	/* (non-Javadoc)
-	 * @see cn.com.rebirth.commons.Version#getModuleVersion()
-	 */
-	@Override
-	public String getModuleVersion() {
-		return "0.0.1.RC1-SNAPSHOT";
-	}
 
 	/* (non-Javadoc)
 	 * @see cn.com.rebirth.commons.Version#getModuleName()

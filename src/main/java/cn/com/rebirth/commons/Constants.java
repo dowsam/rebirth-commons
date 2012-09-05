@@ -10,7 +10,7 @@ package cn.com.rebirth.commons;
  * @author l.xue.nong
  */
 public interface Constants {
-	
+
 	/** The Constant PACKAGE_NAME_FIX. */
 	public static final String PACKAGE_NAME_FIX = "cn.com.rebirth";
 

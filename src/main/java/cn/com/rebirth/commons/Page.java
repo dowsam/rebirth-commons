@@ -19,10 +19,10 @@ public class Page<T> extends PageRequest implements Iterable<T> {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 3504972339739650008L;
-	
+
 	/** The result. */
 	protected List<T> result = null;
-	
+
 	/** The total items. */
 	protected long totalItems = -1;
 

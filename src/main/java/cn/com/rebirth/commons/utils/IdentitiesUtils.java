@@ -13,7 +13,7 @@ import java.util.UUID;
  * @author l.xue.nong
  */
 public abstract class IdentitiesUtils {
-	
+
 	/** The random. */
 	private static SecureRandom random = new SecureRandom();
 
@@ -51,5 +51,9 @@ public abstract class IdentitiesUtils {
 	 */
 	public static String randomBase62() {
 		return EncodeUtils.encodeBase62(random.nextLong());
+	}
+
+	public static void main(String[] args) {
+		System.out.println(EncodeUtils.decodeBase62("BawdtVaDU15"));
 	}
 }

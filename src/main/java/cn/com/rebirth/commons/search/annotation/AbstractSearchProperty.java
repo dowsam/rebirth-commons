@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:rebirth-commons AbstractSearchProperty.java 2012-7-6 10:22:15 l.xue.nong$$
+ * Info:rebirth-commons AbstractSearchProperty.java 2012-8-1 17:23:51 l.xue.nong$$
  */
 package cn.com.rebirth.commons.search.annotation;
 
@@ -9,11 +9,16 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.util.Collection;
+import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.google.common.collect.Maps;
 
 /**
  * The Class AbstractSearchProperty.
@@ -24,6 +29,34 @@ public abstract class AbstractSearchProperty {
 
 	/** The element. */
 	protected final AnnotatedElement element;
+
+	/** The elements. */
+	protected volatile static Map<AnnotatedElement, ElementCallback<?>> elements = Maps.newHashMap();
+	protected final Logger logger = LoggerFactory.getLogger(getClass());
+
+	/**
+	 * Adds the.
+	 *
+	 * @param annotatedElement the annotated element
+	 * @param callback the callback
+	 */
+	public static void add(AnnotatedElement annotatedElement, ElementCallback<?> callback) {
+		synchronized (AbstractSearchProperty.class) {
+			elements.put(annotatedElement, callback);
+		}
+	}
+
+	/**
+	 * Removes the.
+	 *
+	 * @param annotatedElement the annotated element
+	 * @return the element callback
+	 */
+	public static ElementCallback<?> remove(AnnotatedElement annotatedElement) {
+		synchronized (AbstractSearchProperty.class) {
+			return elements.remove(annotatedElement);
+		}
+	}
 
 	/**
 	 * Instantiates a new abstract search property.
@@ -62,7 +95,14 @@ public abstract class AbstractSearchProperty {
 	 * @return true, if is field index
 	 */
 	public boolean isFieldIndex() {
-		return element.isAnnotationPresent(FieldIndex.class);
+		return execute(new ElementCallback<Boolean>() {
+
+			@Override
+			public Boolean doExecute(AnnotatedElement element) {
+				return element.isAnnotationPresent(FieldIndex.class);
+			}
+
+		});
 	}
 
 	/**
@@ -71,8 +111,14 @@ public abstract class AbstractSearchProperty {
 	 * @return the field index
 	 */
 	public FieldIndex getFieldIndex() {
-		FieldIndex fieldIndex = element.getAnnotation(FieldIndex.class);
-		return (FieldIndex) (fieldIndex == null ? FieldIndex.NO_INDEX : fieldIndex);
+		return execute(new ElementCallback<FieldIndex>() {
+
+			@Override
+			public FieldIndex doExecute(AnnotatedElement element) {
+				FieldIndex fieldIndex = element.getAnnotation(FieldIndex.class);
+				return (FieldIndex) (fieldIndex == null ? FieldIndex.NO_INDEX : fieldIndex);
+			}
+		});
 	}
 
 	/**
@@ -81,7 +127,13 @@ public abstract class AbstractSearchProperty {
 	 * @return the field boost
 	 */
 	public FieldBoost getFieldBoost() {
-		return element.getAnnotation(FieldBoost.class);
+		return execute(new ElementCallback<FieldBoost>() {
+
+			@Override
+			public FieldBoost doExecute(AnnotatedElement element) {
+				return element.getAnnotation(FieldBoost.class);
+			}
+		});
 	}
 
 	/**
@@ -90,7 +142,13 @@ public abstract class AbstractSearchProperty {
 	 * @return true, if is field store
 	 */
 	public boolean isFieldStore() {
-		return element.isAnnotationPresent(FieldStore.class);
+		return execute(new ElementCallback<Boolean>() {
+
+			@Override
+			public Boolean doExecute(AnnotatedElement element) {
+				return element.isAnnotationPresent(FieldStore.class);
+			}
+		});
 	}
 
 	/**
@@ -99,8 +157,15 @@ public abstract class AbstractSearchProperty {
 	 * @return the field store
 	 */
 	public FieldStore getFieldStore() {
-		FieldStore fieldStore = element.getAnnotation(FieldStore.class);
-		return (FieldStore) (fieldStore == null ? FieldStore.NO : fieldStore);
+		return execute(new ElementCallback<FieldStore>() {
+
+			@Override
+			public FieldStore doExecute(AnnotatedElement element) {
+				FieldStore fieldStore = element.getAnnotation(FieldStore.class);
+				return (FieldStore) (fieldStore == null ? FieldStore.NO : fieldStore);
+			}
+
+		});
 	}
 
 	/**
@@ -109,7 +174,14 @@ public abstract class AbstractSearchProperty {
 	 * @return the field analyzer
 	 */
 	public FieldAnalyzer getFieldAnalyzer() {
-		return element.getAnnotation(FieldAnalyzer.class);
+		return execute(new ElementCallback<FieldAnalyzer>() {
+
+			@Override
+			public FieldAnalyzer doExecute(AnnotatedElement element) {
+				return element.getAnnotation(FieldAnalyzer.class);
+			}
+
+		});
 	}
 
 	/**
@@ -127,7 +199,13 @@ public abstract class AbstractSearchProperty {
 	 * @return true, if is skip html escape
 	 */
 	public boolean isSkipHTMLEscape() {
-		return element.isAnnotationPresent(SkipHTMLEscape.class);
+		return execute(new ElementCallback<Boolean>() {
+
+			@Override
+			public Boolean doExecute(AnnotatedElement element) {
+				return element.isAnnotationPresent(SkipHTMLEscape.class);
+			}
+		});
 	}
 
 	/**
@@ -168,7 +246,13 @@ public abstract class AbstractSearchProperty {
 	 * @return the column name
 	 */
 	public String getColumnName() {
-		if (element.isAnnotationPresent(Column.class)) {
+		Boolean b = execute(new ElementCallback<Boolean>() {
+			@Override
+			public Boolean doExecute(AnnotatedElement element) {
+				return element.isAnnotationPresent(Column.class);
+			}
+		});
+		if (b) {
 			Column column = element.getAnnotation(Column.class);
 			if (column.name() != null && !column.name().trim().isEmpty()) {
 				String columnName = column.name();
@@ -230,7 +314,12 @@ public abstract class AbstractSearchProperty {
 	 * @param action the action
 	 * @return the t
 	 */
+	@SuppressWarnings("unchecked")
 	public <T> T execute(ElementCallback<T> action) {
+		ElementCallback<?> callback = elements.get(element);
+		if (callback != null) {
+			return (T) callback.doExecute(element);
+		}
 		return action.doExecute(element);
 	}
 

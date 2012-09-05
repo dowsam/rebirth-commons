@@ -24,7 +24,6 @@ import java.util.TreeSet;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 
-
 /**
  * The Class Strings.
  *
@@ -32,31 +31,24 @@ import com.google.common.collect.Iterables;
  */
 public class Strings {
 
-	
 	/** The Constant EMPTY_ARRAY. */
 	public static final String[] EMPTY_ARRAY = new String[0];
 
-	
 	/** The Constant FOLDER_SEPARATOR. */
 	private static final String FOLDER_SEPARATOR = "/";
 
-	
 	/** The Constant WINDOWS_FOLDER_SEPARATOR. */
 	private static final String WINDOWS_FOLDER_SEPARATOR = "\\";
 
-	
 	/** The Constant TOP_PATH. */
 	private static final String TOP_PATH = "src/test";
 
-	
 	/** The Constant CURRENT_PATH. */
 	private static final String CURRENT_PATH = ".";
 
-	
 	/** The Constant EXTENSION_SEPARATOR. */
 	private static final char EXTENSION_SEPARATOR = '.';
 
-	
 	/**
 	 * Split smart.
 	 *
@@ -84,7 +76,7 @@ public class Strings {
 				if (!decode)
 					sb.append(ch);
 				if (pos >= end)
-					break; 
+					break;
 				ch = s.charAt(pos++);
 				if (decode) {
 					switch (ch) {
@@ -117,7 +109,6 @@ public class Strings {
 		return lst;
 	}
 
-	
 	/**
 	 * Split ws.
 	 *
@@ -143,7 +134,7 @@ public class Strings {
 				if (!decode)
 					sb.append(ch);
 				if (pos >= end)
-					break; 
+					break;
 				ch = s.charAt(pos++);
 				if (decode) {
 					switch (ch) {
@@ -176,11 +167,6 @@ public class Strings {
 		return lst;
 	}
 
-	
-	
-	
-
-	
 	/**
 	 * Checks for length.
 	 *
@@ -191,7 +177,6 @@ public class Strings {
 		return (str != null && str.length() > 0);
 	}
 
-	
 	/**
 	 * Checks for length.
 	 *
@@ -202,7 +187,6 @@ public class Strings {
 		return hasLength((CharSequence) str);
 	}
 
-	
 	/**
 	 * Checks for text.
 	 *
@@ -222,7 +206,6 @@ public class Strings {
 		return false;
 	}
 
-	
 	/**
 	 * Checks for text.
 	 *
@@ -233,7 +216,6 @@ public class Strings {
 		return hasText((CharSequence) str);
 	}
 
-	
 	/**
 	 * Contains whitespace.
 	 *
@@ -253,7 +235,6 @@ public class Strings {
 		return false;
 	}
 
-	
 	/**
 	 * Contains whitespace.
 	 *
@@ -264,7 +245,6 @@ public class Strings {
 		return containsWhitespace((CharSequence) str);
 	}
 
-	
 	/**
 	 * Trim whitespace.
 	 *
@@ -285,7 +265,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Trim all whitespace.
 	 *
@@ -308,7 +287,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Trim leading whitespace.
 	 *
@@ -326,7 +304,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Trim trailing whitespace.
 	 *
@@ -344,7 +321,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Trim leading character.
 	 *
@@ -363,7 +339,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Trim trailing character.
 	 *
@@ -382,7 +357,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Starts with ignore case.
 	 *
@@ -405,7 +379,6 @@ public class Strings {
 		return lcStr.equals(lcPrefix);
 	}
 
-	
 	/**
 	 * Ends with ignore case.
 	 *
@@ -429,7 +402,6 @@ public class Strings {
 		return lcStr.equals(lcSuffix);
 	}
 
-	
 	/**
 	 * Substring match.
 	 *
@@ -448,7 +420,6 @@ public class Strings {
 		return true;
 	}
 
-	
 	/**
 	 * Count occurrences of.
 	 *
@@ -470,7 +441,6 @@ public class Strings {
 		return count;
 	}
 
-	
 	/**
 	 * Replace.
 	 *
@@ -484,9 +454,9 @@ public class Strings {
 			return inString;
 		}
 		StringBuilder sb = new StringBuilder();
-		int pos = 0; 
+		int pos = 0;
 		int index = inString.indexOf(oldPattern);
-		
+
 		int patLen = oldPattern.length();
 		while (index >= 0) {
 			sb.append(inString.substring(pos, index));
@@ -495,11 +465,10 @@ public class Strings {
 			index = inString.indexOf(oldPattern, pos);
 		}
 		sb.append(inString.substring(pos));
-		
+
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Delete.
 	 *
@@ -511,7 +480,6 @@ public class Strings {
 		return replace(inString, pattern, "");
 	}
 
-	
 	/**
 	 * Delete any.
 	 *
@@ -533,11 +501,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
-	
-	
-
-	
 	/**
 	 * Quote.
 	 *
@@ -548,7 +511,6 @@ public class Strings {
 		return (str != null ? "'" + str + "'" : null);
 	}
 
-	
 	/**
 	 * Quote if string.
 	 *
@@ -559,7 +521,6 @@ public class Strings {
 		return (obj instanceof String ? quote((String) obj) : obj);
 	}
 
-	
 	/**
 	 * Unqualify.
 	 *
@@ -570,7 +531,6 @@ public class Strings {
 		return unqualify(qualifiedName, '.');
 	}
 
-	
 	/**
 	 * Unqualify.
 	 *
@@ -582,7 +542,6 @@ public class Strings {
 		return qualifiedName.substring(qualifiedName.lastIndexOf(separator) + 1);
 	}
 
-	
 	/**
 	 * Capitalize.
 	 *
@@ -593,7 +552,6 @@ public class Strings {
 		return changeFirstCharacterCase(str, true);
 	}
 
-	
 	/**
 	 * Uncapitalize.
 	 *
@@ -604,7 +562,6 @@ public class Strings {
 		return changeFirstCharacterCase(str, false);
 	}
 
-	
 	/**
 	 * Change first character case.
 	 *
@@ -626,12 +583,10 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/** The Constant INVALID_FILENAME_CHARS. */
 	public static final ImmutableSet<Character> INVALID_FILENAME_CHARS = ImmutableSet.of('\\', '/', '*', '?', '"', '<',
 			'>', '|', ' ', ',');
 
-	
 	/**
 	 * Valid file name.
 	 *
@@ -648,7 +603,6 @@ public class Strings {
 		return true;
 	}
 
-	
 	/**
 	 * Valid file name excluding astrix.
 	 *
@@ -665,7 +619,6 @@ public class Strings {
 		return true;
 	}
 
-	
 	/**
 	 * Gets the filename.
 	 *
@@ -680,7 +633,6 @@ public class Strings {
 		return (separatorIndex != -1 ? path.substring(separatorIndex + 1) : path);
 	}
 
-	
 	/**
 	 * Gets the filename extension.
 	 *
@@ -695,7 +647,6 @@ public class Strings {
 		return (sepIndex != -1 ? path.substring(sepIndex + 1) : null);
 	}
 
-	
 	/**
 	 * Strip filename extension.
 	 *
@@ -710,7 +661,6 @@ public class Strings {
 		return (sepIndex != -1 ? path.substring(0, sepIndex) : path);
 	}
 
-	
 	/**
 	 * Apply relative path.
 	 *
@@ -731,7 +681,6 @@ public class Strings {
 		}
 	}
 
-	
 	/**
 	 * Clean path.
 	 *
@@ -744,10 +693,6 @@ public class Strings {
 		}
 		String pathToUse = replace(path, WINDOWS_FOLDER_SEPARATOR, FOLDER_SEPARATOR);
 
-		
-		
-		
-		
 		int prefixIndex = pathToUse.indexOf(":");
 		String prefix = "";
 		if (prefixIndex != -1) {
@@ -766,22 +711,21 @@ public class Strings {
 		for (int i = pathArray.length - 1; i >= 0; i--) {
 			String element = pathArray[i];
 			if (CURRENT_PATH.equals(element)) {
-				
+
 			} else if (TOP_PATH.equals(element)) {
-				
+
 				tops++;
 			} else {
 				if (tops > 0) {
-					
+
 					tops--;
 				} else {
-					
+
 					pathElements.add(0, element);
 				}
 			}
 		}
 
-		
 		for (int i = 0; i < tops; i++) {
 			pathElements.add(0, TOP_PATH);
 		}
@@ -789,7 +733,6 @@ public class Strings {
 		return prefix + collectionToDelimitedString(pathElements, FOLDER_SEPARATOR);
 	}
 
-	
 	/**
 	 * Path equals.
 	 *
@@ -801,7 +744,6 @@ public class Strings {
 		return cleanPath(path1).equals(cleanPath(path2));
 	}
 
-	
 	/**
 	 * Parses the locale string.
 	 *
@@ -814,10 +756,9 @@ public class Strings {
 		String country = (parts.length > 1 ? parts[1] : "");
 		String variant = "";
 		if (parts.length >= 2) {
-			
-			
+
 			int endIndexOfCountryCode = localeString.indexOf(country) + country.length();
-			
+
 			variant = trimLeadingWhitespace(localeString.substring(endIndexOfCountryCode));
 			if (variant.startsWith("_")) {
 				variant = trimLeadingCharacter(variant, '_');
@@ -826,7 +767,6 @@ public class Strings {
 		return (language.length() > 0 ? new Locale(language, country, variant) : null);
 	}
 
-	
 	/**
 	 * To language tag.
 	 *
@@ -837,11 +777,6 @@ public class Strings {
 		return locale.getLanguage() + (hasText(locale.getCountry()) ? "-" + locale.getCountry() : "");
 	}
 
-	
-	
-	
-
-	
 	/**
 	 * Adds the string to array.
 	 *
@@ -859,7 +794,6 @@ public class Strings {
 		return newArr;
 	}
 
-	
 	/**
 	 * Concatenate string arrays.
 	 *
@@ -880,7 +814,6 @@ public class Strings {
 		return newArr;
 	}
 
-	
 	/**
 	 * Merge string arrays.
 	 *
@@ -905,7 +838,6 @@ public class Strings {
 		return toStringArray(result);
 	}
 
-	
 	/**
 	 * Sort string array.
 	 *
@@ -920,7 +852,6 @@ public class Strings {
 		return array;
 	}
 
-	
 	/**
 	 * To string array.
 	 *
@@ -934,7 +865,6 @@ public class Strings {
 		return collection.toArray(new String[collection.size()]);
 	}
 
-	
 	/**
 	 * To string array.
 	 *
@@ -949,7 +879,6 @@ public class Strings {
 		return list.toArray(new String[list.size()]);
 	}
 
-	
 	/**
 	 * Trim array elements.
 	 *
@@ -968,7 +897,6 @@ public class Strings {
 		return result;
 	}
 
-	
 	/**
 	 * Removes the duplicate strings.
 	 *
@@ -984,7 +912,6 @@ public class Strings {
 		return toStringArray(set);
 	}
 
-	
 	/**
 	 * Split string by comma to set.
 	 *
@@ -995,7 +922,6 @@ public class Strings {
 		return splitStringToSet(s, ',');
 	}
 
-	
 	/**
 	 * Split string by comma to array.
 	 *
@@ -1006,7 +932,6 @@ public class Strings {
 		return splitStringToArray(s, ',');
 	}
 
-	
 	/**
 	 * Split string to set.
 	 *
@@ -1024,12 +949,12 @@ public class Strings {
 		}
 		final THashSet<String> result = new THashSet<String>(count);
 		final int len = chars.length;
-		int start = 0; 
-		int pos = 0; 
+		int start = 0;
+		int pos = 0;
 		for (; pos < len; pos++) {
 			if (chars[pos] == c) {
 				int size = pos - start;
-				if (size > 0) { 
+				if (size > 0) {
 					result.add(new String(chars, start, size));
 				}
 				start = pos + 1;
@@ -1042,7 +967,6 @@ public class Strings {
 		return result;
 	}
 
-	
 	/**
 	 * Split string to array.
 	 *
@@ -1063,9 +987,9 @@ public class Strings {
 		}
 		final String[] result = new String[count];
 		final int len = chars.length;
-		int start = 0; 
-		int pos = 0; 
-		int i = 0; 
+		int start = 0;
+		int pos = 0;
+		int i = 0;
 		for (; pos < len; pos++) {
 			if (chars[pos] == c) {
 				int size = pos - start;
@@ -1080,7 +1004,7 @@ public class Strings {
 			result[i++] = new String(chars, start, size);
 		}
 		if (i != count) {
-			
+
 			String[] result1 = new String[i];
 			System.arraycopy(result, 0, result1, 0, i);
 			return result1;
@@ -1088,7 +1012,6 @@ public class Strings {
 		return result;
 	}
 
-	
 	/**
 	 * Split.
 	 *
@@ -1109,7 +1032,6 @@ public class Strings {
 		return new String[] { beforeDelimiter, afterDelimiter };
 	}
 
-	
 	/**
 	 * Split array elements into properties.
 	 *
@@ -1121,7 +1043,6 @@ public class Strings {
 		return splitArrayElementsIntoProperties(array, delimiter, null);
 	}
 
-	
 	/**
 	 * Split array elements into properties.
 	 *
@@ -1149,7 +1070,6 @@ public class Strings {
 		return result;
 	}
 
-	
 	/**
 	 * Tokenize to string array.
 	 *
@@ -1161,7 +1081,6 @@ public class Strings {
 		return tokenizeToStringArray(str, delimiters, true, true);
 	}
 
-	
 	/**
 	 * Tokenize to string array.
 	 *
@@ -1191,7 +1110,6 @@ public class Strings {
 		return toStringArray(tokens);
 	}
 
-	
 	/**
 	 * Delimited list to string array.
 	 *
@@ -1203,7 +1121,6 @@ public class Strings {
 		return delimitedListToStringArray(str, delimiter, null);
 	}
 
-	
 	/**
 	 * Delimited list to string array.
 	 *
@@ -1232,14 +1149,13 @@ public class Strings {
 				pos = delPos + delimiter.length();
 			}
 			if (str.length() > 0 && pos <= str.length()) {
-				
+
 				result.add(deleteAny(str.substring(pos), charsToDelete));
 			}
 		}
 		return toStringArray(result);
 	}
 
-	
 	/**
 	 * Comma delimited list to string array.
 	 *
@@ -1250,7 +1166,6 @@ public class Strings {
 		return delimitedListToStringArray(str, ",");
 	}
 
-	
 	/**
 	 * Comma delimited list to set.
 	 *
@@ -1264,7 +1179,6 @@ public class Strings {
 		return set;
 	}
 
-	
 	/**
 	 * Collection to delimited string.
 	 *
@@ -1289,7 +1203,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Collection to delimited string.
 	 *
@@ -1301,7 +1214,6 @@ public class Strings {
 		return collectionToDelimitedString(coll, delim, "", "");
 	}
 
-	
 	/**
 	 * Collection to comma delimited string.
 	 *
@@ -1312,7 +1224,6 @@ public class Strings {
 		return collectionToDelimitedString(coll, ",");
 	}
 
-	
 	/**
 	 * Array to delimited string.
 	 *
@@ -1334,7 +1245,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Array to comma delimited string.
 	 *
@@ -1345,7 +1255,6 @@ public class Strings {
 		return arrayToDelimitedString(arr, ",");
 	}
 
-	
 	/**
 	 * Format1 decimals.
 	 *
@@ -1373,7 +1282,6 @@ public class Strings {
 		}
 	}
 
-	
 	/**
 	 * To camel case.
 	 *
@@ -1384,7 +1292,6 @@ public class Strings {
 		return toCamelCase(value, null);
 	}
 
-	
 	/**
 	 * To camel case.
 	 *
@@ -1403,7 +1310,7 @@ public class Strings {
 					} else {
 						sb = new StringBuilder();
 					}
-					
+
 					for (int j = 0; j < i; j++) {
 						sb.append(value.charAt(j));
 					}
@@ -1422,7 +1329,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * To underscore case.
 	 *
@@ -1433,7 +1339,6 @@ public class Strings {
 		return toUnderscoreCase(value, null);
 	}
 
-	
 	/**
 	 * To underscore case.
 	 *
@@ -1452,7 +1357,7 @@ public class Strings {
 					} else {
 						sb = new StringBuilder();
 					}
-					
+
 					for (int j = 0; j < i; j++) {
 						sb.append(value.charAt(j));
 					}
@@ -1479,7 +1384,6 @@ public class Strings {
 		return sb.toString();
 	}
 
-	
 	/**
 	 * Checks if is empty.
 	 *
@@ -1490,7 +1394,6 @@ public class Strings {
 		return (array == null || array.length == 0);
 	}
 
-	
 	/**
 	 * Checks if is empty.
 	 *
@@ -1501,7 +1404,6 @@ public class Strings {
 		return (collection == null || collection.isEmpty());
 	}
 
-	
 	/**
 	 * Instantiates a new strings.
 	 */

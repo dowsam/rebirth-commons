@@ -5,22 +5,30 @@
 package cn.com.rebirth.commons;
 
 import java.util.List;
+import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cn.com.rebirth.commons.exception.RebirthException;
 import cn.com.rebirth.commons.utils.ClassResolverUtils;
+
+import com.google.common.collect.Maps;
 
 /**
  * A factory for creating Version objects.
  */
-public final class VersionFactory {
+public final class VersionFactory implements Initialization, PreInitialization {
 
 	/** The logger. */
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	/** The versions. */
 	private List<Version> versions;
+
+	/** The context. */
+	private volatile Map<String, Version> context = Maps.newHashMap();
 
 	/**
 	 * Instantiates a new version factory.
@@ -52,19 +60,53 @@ public final class VersionFactory {
 	/**
 	 * Inits the.
 	 */
+	@Override
 	public void init() {
 		if (versions != null) {
 			for (Version version : versions) {
 				logger.info("Initialization Rebirth Module(" + version.getModuleName() + "("
 						+ version.getModuleVersion() + "))");
+				context.put((version.getModuleName() + "-" + version.getModuleVersion()).toLowerCase(), version);
 			}
 		}
 	}
 
 	/**
+	 * Current version.
+	 *
+	 * @return the version
+	 */
+	public Version currentVersion() {
+		String appName = System.getProperty("app.name");
+		if (StringUtils.isBlank(appName)) {
+			String arr[] = StringUtils.split(System.getProperty("user.dir"), "\\");
+			appName = arr[arr.length - 1];
+		}
+		if (StringUtils.isBlank(appName)) {
+			throw new RebirthException("not find appName!");
+		}
+		return this.context.get((appName + "-" + Version.CURRENTVERSION).toLowerCase());
+	}
+
+	/**
 	 * Stop.
 	 */
+	@Override
 	public void stop() {
 
 	}
+
+	/* (non-Javadoc)
+	 * @see cn.com.rebirth.commons.SortInitialization#sort()
+	 */
+	@Override
+	public Integer sort() {
+		return Integer.MAX_VALUE;
+	}
+
+	@Override
+	public void beforeInit(RebirthContainer container) {
+
+	}
+
 }

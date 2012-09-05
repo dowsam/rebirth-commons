@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>cn.com.rebirth</groupId>
 		<artifactId>rebirth-parent</artifactId>
-		<version>0.0.1.RELEASE</version>
+		<version>0.0.2.RC5.SNAPSHOT</version>
 	</parent>
 	<artifactId>rebirth-commons</artifactId>
 	<packaging>jar</packaging>
@@ -49,7 +49,6 @@
 		<dependency>
 			<groupId>net.sf.dozer</groupId>
 			<artifactId>dozer</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -58,22 +57,18 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.dbunit</groupId>
@@ -106,11 +101,14 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
-		  <groupId>com.fasterxml.jackson.module</groupId>
-		  <artifactId>jackson-module-jaxb-annotations</artifactId>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-jaxb-annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-smile</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
@@ -145,6 +143,10 @@
 			<groupId>net.sf.trove4j</groupId>
 			<artifactId>trove4j</artifactId>
 			<version>3.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
 		</dependency>
 	</dependencies>
 

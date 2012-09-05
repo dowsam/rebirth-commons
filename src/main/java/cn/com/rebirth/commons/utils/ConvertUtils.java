@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2005-2012 www.china-cti.com All rights reserved
- * Info:rebirth-commons ConvertUtils.java 2012-7-6 10:22:13 l.xue.nong$$
+ * Info:rebirth-commons ConvertUtils.java 2012-7-24 18:37:58 l.xue.nong$$
  */
 package cn.com.rebirth.commons.utils;
 
@@ -22,13 +22,9 @@ import com.google.common.collect.Lists;
  * @author l.xue.nong
  */
 public abstract class ConvertUtils {
-	
+
 	/** The dozer. */
 	private static DozerBeanMapper dozer = new DozerBeanMapper();
-
-	static {
-		registerDateConverter();
-	}
 
 	/**
 	 * Map.
@@ -94,12 +90,24 @@ public abstract class ConvertUtils {
 
 	/**
 	 * Register date converter.
+	 *
+	 * @param formats the formats "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyyMMddHHmmss"
 	 */
-	private static void registerDateConverter() {
+	public static void registerDateConverter(String... formats) {
 		DateConverter dc = new DateConverter();
 		dc.setUseLocaleFormat(true);
-		dc.setPatterns(new String[] { "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyyMMddHHmmss" });
+		dc.setPatterns(formats);
 		org.apache.commons.beanutils.ConvertUtils.register(dc, Date.class);
+
+	}
+
+	/**
+	 * Removes the converter.
+	 *
+	 * @param classz the classz
+	 */
+	public static void removeConverter(Class<?> classz) {
+		org.apache.commons.beanutils.ConvertUtils.deregister(classz);
 	}
 
 	/**

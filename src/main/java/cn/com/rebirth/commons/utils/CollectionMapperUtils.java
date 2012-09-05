@@ -72,7 +72,8 @@ public abstract class CollectionMapperUtils {
 	@SuppressWarnings("rawtypes")
 	public static List extractToList(final Collection collection, final String propertyName) {
 		List list = new ArrayList();
-
+		if (collection == null)
+			return list;
 		try {
 			for (Object obj : collection) {
 				list.add(PropertyUtils.getProperty(obj, propertyName));

@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 
 import cn.com.rebirth.commons.utils.ExceptionUtils;
 
-
 /**
  * The Class AnnotationManager.
  *
@@ -212,6 +211,9 @@ public class AnnotationManager {
 		AnnotationInfo ai = new AnnotationInfo();
 		ai.setClassAnnotations(c.getAnnotations());
 		ai.setMainClass(c);
+		putTableDeclaration(ai, c);
+		putProperties(ai, c);
+		putMethods(ai, c);
 		Class<?> superClass = c;
 		Class<?> rootClass = null;
 		while ((superClass = superClass.getSuperclass()) != null && superClass != Object.class) {
@@ -224,9 +226,6 @@ public class AnnotationManager {
 		} else {
 			ai.setRootClass(c);
 		}
-		putTableDeclaration(ai, c);
-		putProperties(ai, c);
-		putMethods(ai, c);
 		if (ai.getIdMethod() == null) {
 			throw new RuntimeException("No ID method specified for: " + c.getName());
 		}
@@ -262,7 +261,7 @@ public class AnnotationManager {
 			if (Modifier.isStatic(modifiers) || Modifier.isAbstract(modifiers) || Modifier.isFinal(modifiers))
 				continue;
 			String methodName = method.getName();
-			if (!methodName.startsWith("get"))
+			if (!methodName.startsWith("get") && !methodName.startsWith("is"))
 				continue;
 			Transient transientM = method.getAnnotation(Transient.class);
 			if (transientM != null)

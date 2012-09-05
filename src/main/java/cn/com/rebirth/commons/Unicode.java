@@ -11,7 +11,6 @@ import org.apache.lucene.util.UnicodeUtil;
 
 import cn.com.rebirth.commons.thread.ThreadLocals;
 
-
 /**
  * The Class Unicode.
  *
@@ -19,7 +18,6 @@ import cn.com.rebirth.commons.thread.ThreadLocals;
  */
 public class Unicode {
 
-	
 	/** The cached utf8 result. */
 	private static ThreadLocal<ThreadLocals.CleanableValue<UnicodeUtil.UTF8Result>> cachedUtf8Result = new ThreadLocal<ThreadLocals.CleanableValue<UnicodeUtil.UTF8Result>>() {
 		@Override
@@ -28,7 +26,6 @@ public class Unicode {
 		}
 	};
 
-	
 	/** The cached utf16 result. */
 	private static ThreadLocal<ThreadLocals.CleanableValue<UTF16Result>> cachedUtf16Result = new ThreadLocal<ThreadLocals.CleanableValue<UTF16Result>>() {
 		@Override
@@ -37,7 +34,6 @@ public class Unicode {
 		}
 	};
 
-	
 	/**
 	 * From string as bytes.
 	 *
@@ -52,7 +48,6 @@ public class Unicode {
 		return Arrays.copyOfRange(result.result, 0, result.length);
 	}
 
-	
 	/**
 	 * From string as utf8.
 	 *
@@ -68,7 +63,6 @@ public class Unicode {
 		return result;
 	}
 
-	
 	/**
 	 * Unsafe from string as utf8.
 	 *
@@ -84,7 +78,6 @@ public class Unicode {
 		return result;
 	}
 
-	
 	/**
 	 * From bytes.
 	 *
@@ -95,7 +88,6 @@ public class Unicode {
 		return fromBytes(source, 0, source.length);
 	}
 
-	
 	/**
 	 * From bytes.
 	 *
@@ -112,7 +104,6 @@ public class Unicode {
 		return new String(result.result, 0, result.length);
 	}
 
-	
 	/**
 	 * From bytes as utf16.
 	 *
@@ -123,7 +114,6 @@ public class Unicode {
 		return fromBytesAsUtf16(source, 0, source.length);
 	}
 
-	
 	/**
 	 * From bytes as utf16.
 	 *
@@ -141,7 +131,6 @@ public class Unicode {
 		return result;
 	}
 
-	
 	/**
 	 * Unsafe from bytes as utf16.
 	 *
@@ -152,7 +141,6 @@ public class Unicode {
 		return unsafeFromBytesAsUtf16(source, 0, source.length);
 	}
 
-	
 	/**
 	 * Unsafe from bytes as utf16.
 	 *
@@ -170,28 +158,19 @@ public class Unicode {
 		return result;
 	}
 
-	
-
-	
-	
-
-	
 	/**
 	 * The Class UTF16Result.
 	 *
 	 * @author l.xue.nong
 	 */
 	public static final class UTF16Result {
-		
-		
+
 		/** The result. */
 		public char[] result = new char[10];
-		
-		
+
 		/** The length. */
 		public int length;
 
-		
 		/**
 		 * Sets the length.
 		 *
@@ -206,7 +185,6 @@ public class Unicode {
 			length = newLength;
 		}
 
-		
 		/**
 		 * Copy text.
 		 *
@@ -218,7 +196,6 @@ public class Unicode {
 		}
 	}
 
-	
 	/**
 	 * UT f8to ut f16.
 	 *
@@ -231,22 +208,11 @@ public class Unicode {
 
 		final int end = offset + length;
 		char[] out = result.result;
-		
-		
-		
-		
-		
-		
 
-		
-		
 		int upto = offset;
-		
-		
 
-		int outUpto = 0; 
+		int outUpto = 0;
 
-		
 		if (outUpto + length >= out.length) {
 			char[] newOut = new char[2 * (outUpto + length)];
 			System.arraycopy(out, 0, newOut, 0, outUpto);
@@ -258,59 +224,50 @@ public class Unicode {
 			final int b = utf8[upto] & 0xff;
 			final int ch;
 
-			upto += 1; 
-			
+			upto += 1;
 
 			if (b < 0xc0) {
 				assert b < 0x80;
 				ch = b;
 			} else if (b < 0xe0) {
 				ch = ((b & 0x1f) << 6) + (utf8[upto] & 0x3f);
-				upto += 1; 
-				
+				upto += 1;
+
 			} else if (b < 0xf0) {
 				ch = ((b & 0xf) << 12) + ((utf8[upto] & 0x3f) << 6) + (utf8[upto + 1] & 0x3f);
-				upto += 2; 
-				
-				
+				upto += 2;
+
 			} else {
 				assert b < 0xf8;
 				ch = ((b & 0x7) << 18) + ((utf8[upto] & 0x3f) << 12) + ((utf8[upto + 1] & 0x3f) << 6)
 						+ (utf8[upto + 2] & 0x3f);
-				upto += 3; 
-				
-				
-				
+				upto += 3;
+
 			}
 
 			if (ch <= UNI_MAX_BMP) {
-				
+
 				out[outUpto++] = (char) ch;
 			} else {
-				
+
 				final int chHalf = ch - HALF_BASE;
 				out[outUpto++] = (char) ((chHalf >> HALF_SHIFT) + UnicodeUtil.UNI_SUR_HIGH_START);
 				out[outUpto++] = (char) ((chHalf & HALF_MASK) + UnicodeUtil.UNI_SUR_LOW_START);
 			}
 		}
 
-		
 		result.length = outUpto;
 	}
 
-	
 	/** The Constant UNI_MAX_BMP. */
 	private static final long UNI_MAX_BMP = 0x0000FFFF;
 
-	
 	/** The Constant HALF_BASE. */
 	private static final int HALF_BASE = 0x0010000;
-	
-	
+
 	/** The Constant HALF_SHIFT. */
 	private static final long HALF_SHIFT = 10;
-	
-	
+
 	/** The Constant HALF_MASK. */
 	private static final long HALF_MASK = 0x3FFL;
 }

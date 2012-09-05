@@ -31,7 +31,7 @@ public class PageRequest implements Serializable {
 
 		/** The asc. */
 		ASC,
-		
+
 		/** The desc. */
 		DESC;
 
@@ -61,7 +61,7 @@ public class PageRequest implements Serializable {
 
 		/** The Constant serialVersionUID. */
 		private static final long serialVersionUID = 7939310426624426548L;
-		
+
 		/** The direction. */
 		protected Direction direction;
 
@@ -192,6 +192,24 @@ public class PageRequest implements Serializable {
 		@Override
 		public String toString() {
 			return String.format("%s: %s", property, direction);
+		}
+
+		/**
+		 * Sets the direction.
+		 *
+		 * @param direction the new direction
+		 */
+		public void setDirection(Direction direction) {
+			this.direction = direction;
+		}
+
+		/**
+		 * Sets the property.
+		 *
+		 * @param property the new property
+		 */
+		public void setProperty(String property) {
+			this.property = property;
 		}
 
 	}
@@ -379,7 +397,7 @@ public class PageRequest implements Serializable {
 
 	/** The count total. */
 	protected boolean countTotal = true;
-	
+
 	/** The sort. */
 	protected Sort sort;
 
